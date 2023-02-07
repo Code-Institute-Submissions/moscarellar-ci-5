@@ -60,8 +60,8 @@ const SignUpForm = () => {
                 placeholder="Username"
                 name="username"
                 value={username}
-                onChange={handleChange}
-              />
+                onChange={handleChange}/>
+                
             </Form.Group>
             {errors.username?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
