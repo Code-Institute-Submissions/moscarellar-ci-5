@@ -93,10 +93,21 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 
 ## Development
 
-1.  Clone [CI repository]
-2.  Open your IDE and connect to your repo: npm install
-3.  Add your personal url for the deployed DRF API at axiosDefaults.js
-3.  Git add, commit and push all changes to your repo.
-4.  Create or log in to an account on Heroku.
-5.  Create a new app on Heroku.
-6.  Go down to Manual deploy and select deploy branch for early deployment.
+Development
+1. Clone the CI repository.
+2. Open your IDE and navigate to the repository. Install dependencies using the command "npm install".
+3. In the project, locate the file axiosDefaults.js. This file contains the API endpoint for the DRF API. Replace the existing URL with the URL of the deployed DRF API.
+4. Make any necessary changes to the project code.
+5. Use Git to add, commit, and push all changes to your repository.
+
+Deployment
+1. Create a Heroku account or log in to your existing account.
+2. Create a new application on Heroku.
+3. Connect the Heroku application to your Git repository by following the instructions provided in the Heroku dashboard.
+Set up any necessary environment variables in the Heroku app settings.
+4. In the Heroku dashboard, go to the "Deploy" tab.
+Under the "Deployment method" section, select "GitHub" as the deployment method.
+5. Choose the repository and branch you want to deploy.
+6. Enable automatic deploys if desired.
+7. Click the "Deploy Branch" button to deploy the app to Heroku.
+8. Once the app is deployed, click the "Open app" button in the Heroku dashboard to view the live application.

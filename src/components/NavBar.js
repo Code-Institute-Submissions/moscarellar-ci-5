@@ -35,6 +35,17 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
   );
+
+  const postMemeIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/meme"
+    >
+      <i className="far fa-image"></i>Post Meme
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
       <NavLink
@@ -94,7 +105,12 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        {currentUser && (
+  <>
+    {addPostIcon}
+    {postMemeIcon}
+  </>
+)}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
