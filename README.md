@@ -83,11 +83,76 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 
 ## Testing of implemented User Stories from User Experience (UX) section
 
+Testing Plan:
+
 ### 1. User authentication/authorisation & Navigation 
+User authentication/authorisation & Navigation
+
+Test cases:
+Verify that only authenticated users can access protected pages
+Verify that unauthenticated users are redirected to the login page
+Verify that user credentials are correctly validated
+Testing actions:
+Attempt to access protected pages as an unauthenticated user
+Attempt to access protected pages as an authenticated user with invalid credentials
+Attempt to access protected pages as an authenticated user with valid credentials
+Expected results:
+Unauthenticated users should be redirected to the login page
+Users with invalid credentials should be denied access
+Users with valid credentials should be granted access
+
 ### 2. Main Feed functionality
+Main Feed functionality
+
+Test cases:
+Verify that posts are displayed in reverse chronological order
+Verify that posts are displayed with the correct author and timestamp
+Testing actions:
+Create multiple posts with different authors and timestamps
+Verify that posts are displayed in the correct order
+Expected results:
+Posts should be displayed in reverse chronological order
+Posts should be displayed with the correct author and timestamp
+
 ### 3. Adding a post
+Adding a post
+
+Test cases:
+Verify that only authenticated users can add posts
+Verify that new posts are displayed on the main feed
+Testing actions:
+Attempt to add a post as an unauthenticated user
+Attempt to add a post as an authenticated user
+Expected results:
+Unauthenticated users should be denied access to the "Add Post" page
+Authenticated users should be able to add posts, which should then be displayed on the main feed
+
 ### 4. Post page functionality
+Post page functionality
+
+Test cases:
+Verify that users can view individual posts
+Verify that users can like and comment on posts
+Testing actions:
+Click on a post from the main feed to view the post page
+Attempt to like and comment on the post
+Expected results:
+Users should be able to view individual posts
+Users should be able to like and comment on posts
+
 ### 5. Profile page functionality
+Profile page functionality
+
+Test cases:
+Verify that users can view their own profile page
+Verify that users can view other users' profile pages
+Testing actions:
+Navigate to the user's own profile page
+Navigate to another user's profile page
+Expected results:
+Users should be able to view their own profile page
+Users should be able to view other users' profile pages.
+
 
 # Deployment
 
@@ -111,3 +176,43 @@ Under the "Deployment method" section, select "GitHub" as the deployment method.
 6. Enable automatic deploys if desired.
 7. Click the "Deploy Branch" button to deploy the app to Heroku.
 8. Once the app is deployed, click the "Open app" button in the Heroku dashboard to view the live application.
+
+## API Deployment
+
+API Deployment Details:
+
+The API deployment details are crucial for the smooth functioning of our React JS project. The backend of your project, which contains the API code, is deployed separately.
+
+Server Infrastructure: Heroku used for this task.
+
+Environment Configuration: We need to configure variables, network settings, and install dependencies that will help us connect with the API securely.
+
+The Axios file we find in the project, is a JavaScript library used to make HTTP requests. We will use it to make requests to the deployed API from our React application.
+
+# Components
+
+The components are designed to be reusable, which means they can be used in different applications or systems. 
+
+## Components in our project
+
+Asset.js: This component is used to display an asset, such as an image or video. It accepts props like src, alt and className.
+
+MoreDropdown.js: This component provides a dropdown menu that can be triggered by clicking on a button. It accepts an array of options that are rendered as clickable items in the dropdown menu.
+
+NavBar.js: This component is used to render a navigation bar with customizable links and styles. It accepts an array of links, each with a label and a URL.
+
+Avatar.js: This component is used to display an avatar image with an optional label or icon.
+
+Reusable components will help us:
+
+Faster development: Reusable components reduce development time and effort by providing pre-built, tested, and ready-to-use functionality.
+
+Improved software quality: Reusable components are tested, validated, and proven to work. This reduces the risk of errors and bugs in the software, and improves overall software quality.
+
+# Improvements and Bugs
+
+I wanted to provide an update on the current status of my bugs and improvements. As I am still learning the React JS framework, there are some issues present on the Meme Page that I am actively working to fix. 
+
+I need to modify the back-end POST to include the Meme Post Page. While working on this, I encountered some confusion on how to change the form to DIVs and how to print the Divs on the images. I am currently researching the best approach and will make the necessary changes as soon as possible.
+
+Future improvements include availability to display a link preview when a link is shared on our platform in a post.
