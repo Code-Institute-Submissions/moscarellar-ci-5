@@ -1,0 +1,19 @@
+.placeholder {
+    width: 100%;
+    min-height: 418px;
+    background-color: lightgray;
+    border: 1px dotted black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    cursor: pointer;
+   }
+   
+   
+   .inputUploader {
+    display: none;
+   }
+   

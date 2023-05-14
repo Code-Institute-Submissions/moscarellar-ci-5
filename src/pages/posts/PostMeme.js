@@ -1,118 +1,77 @@
-import React, { useRef, useState } from "react";
-
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
-import Image from "react-bootstrap/Image";
-
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
-
-import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import React, {useState} from "react";
+import styles from "../../styles/PostMeme.module.css"
+import Uploader from "../../components/Uploader";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/useRedirect";
 
 
-const PostMeme = () => {
-  const [image, setImage] = useState(null);
-  const [upperText, setUpperText] = useState("");
-  const [bottomText, setBottomText] = useState("");
-  const history = useHistory();
+const PostMeme = ({ profession }) => {
+  const [postMeme, setPostMeme] = useState({
+    imgUrl:
+      'https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg',
+    text: '',
+  })
+ 
+  // Initialize state variables for the selected file and preview image
+ const [selectedFile, setSelectedFile] = useState(null)
+ const [previewImage, setPreviewImage] = useState(null)
+ const [errors, setErrors] = useState({});
+ const history = useHistory();
 
-  const handleImageUpload = (event) => {
-    const imageFile = event.target.files[0];
-    setImage(imageFile);
-  };
 
-  const handleUpperTextChange = (event) => {
-    setUpperText(event.target.value);
-  };
+ // Define a function to handle file input changes
+ const handleFileInputChange = (event) => {
+   // Get the selected file from the input event
+   const file = event.target.files[0]
+   // Update the selected file state variable
+   setSelectedFile(file)
+   // Set the preview image URL using the file object
+   setPreviewImage(URL.createObjectURL(file))
+ }
+ 
+  console.log(postMeme)
+ 
+ 
+  const onChangeText = (event) => {
+    const value = event.target.value
+    setPostMeme({ ...postMeme, text: value })
+  }
 
-  const handleBottomTextChange = (event) => {
-    setBottomText(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
+  const onSubmitMeme = async (event) => {
     event.preventDefault();
-
-    if (!image) {
-      alert("Please select an image.");
-      return;
-    }
-
     const formData = new FormData();
-    formData.append("image", image);
-    formData.append("upperText", upperText);
-    formData.append("bottomText", bottomText);
+
+    formData.append("title", postMeme.text);
+    formData.append("image", selectedFile);
 
     try {
-      const response = await axiosReq(formData);
-      const data = response.data;
-      alert("Meme posted successfully.");
+      const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
-    } catch (error) {
-      alert("Error posting meme: " + error.message);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
-
-    setImage(null);
-    setUpperText("");
-    setBottomText("");
   };
-
+ 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col className="py-3">
-          <Form.Group>
-            <Form.Label>Select an image:</Form.Label>
-            <Form.Control type="file" onChange={handleImageUpload} />
-          </Form.Group>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col className="py-3">
-          <Form.Group>
-            <Form.Label>Upper text:</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter upper text"
-              value={upperText}
-              onChange={handleUpperTextChange}
-            />
-          </Form.Group>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col className="py-3">
-          <Form.Group>
-            <Form.Label>Bottom text:</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter bottom text"
-              value={bottomText}
-              onChange={handleBottomTextChange}
-            />
-          </Form.Group>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col className="py-3">
-          <Button type="submit">Post Meme</Button>
-        </Col>
-      </Row>
-    </Form>
-  );
-};
-
-export default PostMeme;
+    <div className={styles.postMemePage}>
+      <div className={styles.imageWrapper}>
+        {/* <img src={postMeme.imgUrl} /> */}
+        <Uploader selectedFile={selectedFile} previewImage={previewImage} handleFileInputChange={handleFileInputChange}/>
+        <p>{postMeme.text}</p>
+      </div>
+      <input
+        className={styles.input}
+        value={postMeme.text}
+        onChange={onChangeText}
+      />
+      <button onClick={onSubmitMeme} className={styles.createMemeButton}>Create Meme</button>
+      </div>
+  )
+ }
+ 
+ 
+ export default PostMeme
