@@ -33,6 +33,7 @@ function PostPage() {
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
         ]);
+       
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
@@ -42,6 +43,7 @@ function PostPage() {
 
     handleMount();
   }, [id]);
+
 
   return (
     <Row className="h-100">

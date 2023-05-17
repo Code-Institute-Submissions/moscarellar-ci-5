@@ -17,6 +17,7 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import PostViewMeme from "./PostViewMeme";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -29,6 +30,7 @@ function PostsPage({ message, filter = "" }) {
     const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        console.log(data.is_meme)
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -68,9 +70,12 @@ function PostsPage({ message, filter = "" }) {
           <>
             {posts.results.length ? (
               <InfiniteScroll
-                children={posts.results.map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} />
-                ))}
+                children={posts.results.map((post) => {
+
+                  return post.is_meme ? <PostViewMeme  key={post.id} {...post} setPosts={setPosts} /> : <Post key={post.id} {...post} setPosts={setPosts} />
+                  
+                }
+                )}
                 dataLength={posts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!posts.next}
