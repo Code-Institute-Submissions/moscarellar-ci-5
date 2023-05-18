@@ -72,11 +72,13 @@ function PostsPage({ message, filter = "" }) {
             {posts.results.length ? (
               <InfiniteScroll
                 children={posts.results.map((post) => {
+                  console.log(post.is_meme)
 
                   return post.is_meme ? <PostViewMeme  key={post.id} {...post} setPosts={setPosts} /> : <Post key={post.id} {...post} setPosts={setPosts} />
                   
                 }
                 )}
+                
                 dataLength={posts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!posts.next}
