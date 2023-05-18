@@ -31,6 +31,7 @@ function PostsPage({ message, filter = "" }) {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         console.log(data.is_meme)
+        console.log(data)
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
