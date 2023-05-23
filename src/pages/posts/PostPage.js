@@ -17,10 +17,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import PostViewMeme from "./PostViewMeme";
 
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
+  const [ isMeme, setIsMeme ] = useState(false)
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
@@ -35,6 +37,7 @@ function PostPage() {
         ]);
        
         setPost({ results: [post] });
+        setIsMeme(post.is_meme)
         setComments(comments);
       } catch (err) {
         console.log(err);
@@ -45,11 +48,15 @@ function PostPage() {
   }, [id]);
 
 
+
+
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <Post {...post.results[0]} setPosts={setPost} postPage />
+        { isMeme ? <PostViewMeme  {...post.results[0]} setPosts={setPost} /> :  <Post {...post.results[0]} setPosts={setPost}  /> }
+       
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm

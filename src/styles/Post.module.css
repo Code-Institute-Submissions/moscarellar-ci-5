@@ -24,3 +24,11 @@
   .HeartOutline:hover {
     color: #f85032;
   }
+
+  .title-meme{
+
+  }
+
+  .description-meme{
+    position: absolute !important;
+  }

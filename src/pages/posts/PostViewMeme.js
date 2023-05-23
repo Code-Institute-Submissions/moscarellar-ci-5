@@ -76,7 +76,6 @@ const PostViewMeme = (props) => {
   return (
     <Card className={styles.Post}>
       <Card.Body>
-        <h1>Esto es un meme</h1>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
@@ -93,12 +92,13 @@ const PostViewMeme = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
+      <Link to={`/posts/${id}`} style={{ position : "relative" }}>
+        {title && <Card.Title className="text-center title-meme">{title}</Card.Title>}
         <Card.Img src={image} alt={title} />
+        {content && <Card.Text style={{ position: "absolute", bottom: 0, width: "100%", padding: "20px", color: "white", backgroundColor: "black" }}>{content}</Card.Text>}
       </Link>
-      <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
+      <Card.Body>       
+        
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
