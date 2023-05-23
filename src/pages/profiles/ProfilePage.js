@@ -24,6 +24,7 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import PostViewMeme from "../posts/PostViewMeme";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -118,9 +119,17 @@ function ProfilePage() {
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
+          children={profilePosts.results.map((post) => {
+            return post.is_meme ? (
+              <PostViewMeme
+                key={post.id}
+                {...post}
+                setPosts={setProfilePosts}
+              />
+            ) : (
+              <Post key={post.id} {...post} setPosts={setProfilePosts} />
+            );
+          })}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}
           hasMore={!!profilePosts.next}
