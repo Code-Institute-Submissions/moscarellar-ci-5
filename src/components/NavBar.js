@@ -46,6 +46,16 @@ const NavBar = () => {
     </NavLink>
   );
 
+  const todoList = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/todolist"
+    >
+       <i className="fas fa-list"></i>Todo List
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
       <NavLink
