@@ -119,6 +119,7 @@ const NavBar = () => {
   <>
     {addPostIcon}
     {postMemeIcon}
+    {todoList}
   </>
 )}
         <Navbar.Toggle
