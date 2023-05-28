@@ -15,6 +15,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PostMeme from "./pages/posts/PostMeme";
+import TodoList from "./pages/todoList/TodoList";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -54,6 +55,7 @@ function App() {
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/todolist" render={() => <TodoList /> } />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/meme" render={() => <PostMeme />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
