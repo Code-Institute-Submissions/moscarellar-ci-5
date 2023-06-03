@@ -1,10 +1,41 @@
-import React from 'react'
-import '../../styles/TodoList.module.css'
+import React, { useEffect, useState } from "react";
+import { axiosReq } from "../../api/axiosDefaults";
 
 const TodoList = () => {
-  return (
-    <div className='main-todo' style={{ backgroundColor: "white", height: "100%" }} >TodoList</div>
-  )
-}
+  const [todos, setTodos] = useState([]);
+  const [error, setError] = useState(null);
 
-export default TodoList
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const response = await axiosReq.get("/todos/");
+        setTodos(response.data.todos);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchTodos();
+  }, []);
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+      {todos && todos.length > 0 ? (
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.id}>{todo.title}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No todos found.</p>
+      )}
+    </div>
+  );
+};
+
+export default TodoList;
