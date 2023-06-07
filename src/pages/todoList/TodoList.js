@@ -40,14 +40,14 @@ const TodoList = () => {
   };
 
   // Delete a todo
-  // const deleteTodo = async (id) => {
-  //   try {
-  //     await axiosReq.delete(`/todos/${id}`);
-  //     setTodos(todos.filter((todo) => todo.id !== id));
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const deleteTodo = async (id) => {
+    try {
+      await axiosReq.delete(`/todos/${id}`);
+      setTodos(todos.filter((todo) => todo.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -63,6 +63,7 @@ const TodoList = () => {
         {todos.map((todo) => (
           <li key={todo.id}>
             {todo.title}{" "}
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
