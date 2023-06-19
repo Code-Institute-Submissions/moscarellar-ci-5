@@ -51,12 +51,12 @@ Please, find the first version of our Wireframes. I did use this initial Wirefra
 
 <details><summary><b>Wireframes - Feed</b></summary>
 
-![Feed] (/src/assets/readme/Feed.png)
+![Feed](/src/assets/readme/Feed.png)
 </details><br/>
 
 <details><summary><b>Wireframes - Signin</b></summary>
 
-![Signin] (src/assets/readme/Signin.png)
+![Signin](src/assets/readme/Signin.png)
 </details><br/>
 
 <details><summary><b>Wireframes - SignUp</b></summary>
