@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Link } from "react-router-dom";
+
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -62,7 +64,7 @@ const TodoList = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.title}{" "}
+            <Link to={`/todos/${todo.id}`}> {todo.title}</Link>
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}

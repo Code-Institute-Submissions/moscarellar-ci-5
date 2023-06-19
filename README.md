@@ -45,6 +45,32 @@ The goal for this project was to work on Project Example Idea 1: Content platfor
 ## Color Scheme
 The main colors used throughout the page are closely aligned to clean code, with white and simple design. 
 
+## Wireframes
+
+Please, find the first version of our Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
+
+<details><summary><b>Wireframes - Feed</b></summary>
+![Wireframes](src/assets/readme/feed.png)
+</details><br/>
+
+<details><summary><b>Wireframes - Signin</b></summary>
+![Wireframes](src/assets/readme/Signin.png)
+</details><br/>
+
+<details><summary><b>Wireframes - SignUp</b></summary>
+![Wireframes](src/assets/readme/signup.png)
+</details><br/>
+
+<details><summary><b>Wireframes - ToDo</b></summary>
+![Wireframes](src/assets/readme/todo.png)
+</details><br/>
+
+<details><summary><b>Wireframes -  Post Meme </b></summary>
+![Wireframes](src/assets/readme/Meme.png)
+</details><br/>
+
+
+
 
 # Agile
 
@@ -62,7 +88,7 @@ Due to time constrains, these additional feature ideas could not be included in 
 - [HTML](https://en.wikipedia.org/wiki/HTML5)
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://www.w3schools.com/js/js_es6.asp)
-  - [JSX](https://reactjs.org/)
+- [JSX](https://reactjs.org/)
 
 ## Programs, libraries, frameworks and dependencies
 
@@ -181,9 +207,43 @@ Under the "Deployment method" section, select "GitHub" as the deployment method.
 
 API Deployment Details:
 
-The API deployment details are crucial for the smooth functioning of our React JS project. The backend of your project, which contains the API code, is deployed separately.
-
 Server Infrastructure: Heroku used for this task.
+
+In order to deploy this app I went to Heroku https:heroku.com/apps
+
+1. Create a New App
+
+We must click new and create new app.
+
+<details><summary><b>Create New App</b></summary>
+![Deploy](src/assets/readme/createnewapp.png)
+</details><br/>
+
+2. Name and Region
+
+Choose a name for your app and choose a region as well.
+
+<details><summary><b>Create App</b></summary>
+![Deploy](src/assets/readme/createapp.png)
+</details><br/>
+
+3. Deploy Tab
+
+Find Deploy Tab, click on it.
+
+<details><summary><b>Deploy</b></summary>
+![Deploy](src/assets/readme/deploy.png)
+</details><br/>
+
+4. Connect to Github
+
+Connect to Github so we can choose our repository to deploy.
+Search repository by name. After is found click on the deploy button.
+
+<details><summary><b>Connect</b></summary>
+![Deploy](src/assets/readme/connect.png)
+</details><br/>
+
 
 Environment Configuration: We need to configure variables, network settings, and install dependencies that will help us connect with the API securely.
 

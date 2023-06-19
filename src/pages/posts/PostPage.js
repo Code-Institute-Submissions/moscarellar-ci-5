@@ -47,7 +47,24 @@ function PostPage() {
     handleMount();
   }, [id]);
 
-
+  const handleDeletePost = async () => {
+    try {
+      // Delete comments
+      await axiosReq.delete(`/comments/?post=${id}`);
+  
+      // Delete post
+      await axiosReq.delete(`/posts/${id}`);
+  
+      // Optionally, delete likes associated with the post
+      await axiosReq.delete(`/likes/?post=${id}`);
+  
+      // Redirect or perform any necessary actions after successful deletion
+      // For example, you can redirect the user to the home page
+      window.location.href = "/";
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 
 
@@ -89,6 +106,9 @@ function PostPage() {
           ) : (
             <span>No comments... yet</span>
           )}
+          {currentUser && currentUser.id === post.results[0]?.author_id && (
+          <button onClick={handleDeletePost}>Delete Post</button>
+        )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
