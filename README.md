@@ -50,22 +50,27 @@ The main colors used throughout the page are closely aligned to clean code, with
 Please, find the first version of our Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
 
 <details><summary><b>Wireframes - Feed</b></summary>
+
 ![Feed] (/src/assets/readme/Feed.png)
 </details><br/>
 
 <details><summary><b>Wireframes - Signin</b></summary>
+
 ![Signin] (src/assets/readme/Signin.png)
 </details><br/>
 
 <details><summary><b>Wireframes - SignUp</b></summary>
+
 ![SignUp](src/assets/readme/signup.png)
 </details><br/>
 
 <details><summary><b>Wireframes - ToDo</b></summary>
+
 ![ToDo](src/assets/readme/todo.png)
 </details><br/>
 
 <details><summary><b>Wireframes -  Post Meme </b></summary>
+
 ![Meme](src/assets/readme/Meme.png)
 </details><br/>
 
@@ -216,6 +221,7 @@ In order to deploy this app I went to Heroku https:heroku.com/apps
 We must click new and create new app.
 
 <details><summary><b>Create New App</b></summary>
+
 ![Deploy](src/assets/readme/createnewapp.png)
 </details><br/>
 
@@ -224,6 +230,7 @@ We must click new and create new app.
 Choose a name for your app and choose a region as well.
 
 <details><summary><b>Create App</b></summary>
+
 ![Deploy](src/assets/readme/createapp.png)
 </details><br/>
 
@@ -232,6 +239,7 @@ Choose a name for your app and choose a region as well.
 Find Deploy Tab, click on it.
 
 <details><summary><b>Deploy</b></summary>
+
 ![Deploy](src/assets/readme/deploy.png)
 </details><br/>
 
@@ -241,6 +249,7 @@ Connect to Github so we can choose our repository to deploy.
 Search repository by name. After is found click on the deploy button.
 
 <details><summary><b>Connect</b></summary>
+
 ![Deploy](src/assets/readme/connect.png)
 </details><br/>
 
