@@ -50,7 +50,7 @@ The main colors used throughout the page are closely aligned to clean code, with
 Please, find the first version of our Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
 
 <details><summary><b>Wireframes - Feed</b></summary>
-![Wireframes](src/assets/readme/feed.png)
+![Wireframes](./src/assets/readme/Feed.png)
 </details><br/>
 
 <details><summary><b>Wireframes - Signin</b></summary>
