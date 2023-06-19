@@ -50,23 +50,23 @@ The main colors used throughout the page are closely aligned to clean code, with
 Please, find the first version of our Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
 
 <details><summary><b>Wireframes - Feed</b></summary>
-![Wireframes](./src/assets/readme/Feed.png)
+![Feed](src/assets/readme/Feed.png)
 </details><br/>
 
 <details><summary><b>Wireframes - Signin</b></summary>
-![Wireframes](src/assets/readme/Signin.png)
+![Signin](src/assets/readme/Signin.png)
 </details><br/>
 
 <details><summary><b>Wireframes - SignUp</b></summary>
-![Wireframes](src/assets/readme/signup.png)
+![SignUp](src/assets/readme/signup.png)
 </details><br/>
 
 <details><summary><b>Wireframes - ToDo</b></summary>
-![Wireframes](src/assets/readme/todo.png)
+![ToDo](src/assets/readme/todo.png)
 </details><br/>
 
 <details><summary><b>Wireframes -  Post Meme </b></summary>
-![Wireframes](src/assets/readme/Meme.png)
+![Meme](src/assets/readme/Meme.png)
 </details><br/>
 
 
