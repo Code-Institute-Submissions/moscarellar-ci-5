@@ -19,6 +19,8 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PostViewMeme from "./PostViewMeme";
 
+import { axiosRes } from "../../api/axiosDefaults";
+
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
@@ -49,14 +51,14 @@ function PostPage() {
 
   const handleDeletePost = async () => {
     try {
-      // Delete comments
-      await axiosReq.delete(`/comments/?post=${id}`);
+      // // Delete comments
+      // await axiosReq.delete(`/comments/?post=${id}`);
   
       // Delete post
-      await axiosReq.delete(`/posts/${id}`);
-  
-      // Optionally, delete likes associated with the post
-      await axiosReq.delete(`/likes/?post=${id}`);
+       await axiosRes.delete(`/posts/${id}`);
+      
+      // // Optionally, delete likes associated with the post
+      // await axiosReq.delete(`/likes/?post=${id}`);
   
       // Redirect or perform any necessary actions after successful deletion
       // For example, you can redirect the user to the home page
