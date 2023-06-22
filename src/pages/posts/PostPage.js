@@ -59,6 +59,10 @@ function PostPage() {
     handleMount();
   }, [id]);
 
+  const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+  };
+
   const handleDelete = async () => {
     try {
       await axiosReq.delete(`/posts/${id}/`);
@@ -88,7 +92,7 @@ function PostPage() {
             <span>{updated_at}</span>
             {is_owner && postPage && (
               <MoreDropdown
-                // handleEdit={handleEdit}
+                handleEdit={handleEdit}
                 handleDelete={handleDelete}
               />
             )}

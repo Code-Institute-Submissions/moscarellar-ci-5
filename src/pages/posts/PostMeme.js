@@ -77,9 +77,10 @@ function PostMeme() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label>Upper Text</Form.Label>
         <Form.Control
           type="text"
+          rows={1}
           name="title"
           value={title}
           onChange={handleChange}
@@ -92,10 +93,10 @@ function PostMeme() {
       ))}
 
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label>Bottom Text</Form.Label>
         <Form.Control
           as="textarea"
-          rows={6}
+          rows={1}
           name="content"
           value={content}
           onChange={handleChange}
