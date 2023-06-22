@@ -1,3 +1,6 @@
+// Route exact path="/posts/:id" render={() => <PostPage />} />
+// should render Posts/id, MEME and Normal Post
+
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
@@ -18,17 +21,24 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PostViewMeme from "./PostViewMeme";
+import { MoreDropdown } from "../../components/MoreDropdown";
+import { useHistory } from "react-router-dom";
+// import { axiosRes } from "../../api/axiosDefaults";
 
-import { axiosRes } from "../../api/axiosDefaults";
+
 
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
   const [ isMeme, setIsMeme ] = useState(false)
-
+  const updated_at = post.results[0]?.updated_at;
+  
+  const postPage = true;
   const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === post.results[0]?.owner;
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
+  const history = useHistory();
 
   useEffect(() => {
     const handleMount = async () => {
@@ -49,32 +59,42 @@ function PostPage() {
     handleMount();
   }, [id]);
 
-  const handleDeletePost = async () => {
+  const handleDelete = async () => {
     try {
-      // // Delete comments
-      // await axiosReq.delete(`/comments/?post=${id}`);
-  
-      // Delete post
-       await axiosRes.delete(`/posts/${id}`);
-      
-      // // Optionally, delete likes associated with the post
-      // await axiosReq.delete(`/likes/?post=${id}`);
-  
-      // Redirect or perform any necessary actions after successful deletion
-      // For example, you can redirect the user to the home page
-      window.location.href = "/";
+      await axiosReq.delete(`/posts/${id}/`);
+      history.goBack();
     } catch (err) {
       console.log(err);
     }
   };
 
+  // const PostDet = (props) => {
+  //   const {
+  //     id,
+  //     profile_image,
+  //     updated_at,
+  //     postPage,
+  //   } = props;
+  
 
 
   return (
+    
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
+        
+        <div className="d-flex align-items-center">
+            <span>{updated_at}</span>
+            {is_owner && postPage && (
+              <MoreDropdown
+                // handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
+        
         { isMeme ? <PostViewMeme  {...post.results[0]} setPosts={setPost} /> :  <Post {...post.results[0]} setPosts={setPost}  /> }
+        </div>
        
         <Container className={appStyles.Content}>
           {currentUser ? (
@@ -108,11 +128,12 @@ function PostPage() {
           ) : (
             <span>No comments... yet</span>
           )}
-          {currentUser && currentUser.id === post.results[0]?.author_id && (
-          <button onClick={handleDeletePost}>Delete Post</button>
-        )}
+          <span>{updated_at}</span>
+            
+          
         </Container>
       </Col>
+      
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
