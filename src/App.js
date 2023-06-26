@@ -16,6 +16,8 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PostMeme from "./pages/posts/PostMeme";
 import TodoList from "./pages/todoList/TodoList";
+import Home from "./pages/posts/Home";
+
 
 function App() {
   const currentUser = useCurrentUser();
@@ -26,11 +28,17 @@ function App() {
       <NavBar />
       <Container className={styles.Main} >
         <Switch>
+        <Route exact path="/home" render={() => <Home />} />
+
           <Route
             exact
             path="/"
             render={() => (
-              <PostsPage message="No results found. Adjust the search keyword." />
+              currentUser ? (
+                <PostsPage message="No results found. Adjust the search keyword." />
+              ) : (
+                <Home />
+              )
             )}
           />
           <Route
