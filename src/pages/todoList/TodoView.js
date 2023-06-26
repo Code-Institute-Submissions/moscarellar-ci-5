@@ -30,7 +30,12 @@ const TodoView = () => {
       <h3>Title: {todo.title}</h3>
       <h4>ID: {todo.id}</h4>
       <p>Description: {todo.description}</p>
-      <Link to="/todolist">Back to Todo List</Link>
+      <p>Deadline: {todo.deadline}</p>
+      <p>Status: {todo.completed ? "Completed" : "Not Completed"}</p>
+      
+     <button>
+        <Link to="/todolist">Back to Todo List</Link>
+      </button>
       
     </div>
   );
