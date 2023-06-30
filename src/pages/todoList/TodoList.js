@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 
+
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
@@ -26,10 +27,11 @@ const TodoList = () => {
   // Add a new todo
   const addTodo = async () => {
     try {
+      const datetimeDeadline = `${newDeadline}T00:00:00`; // Add a time to the date
       const { data } = await axiosReq.post("/todos/", {
         title: newTodo,
         description: newDescription,
-        deadline: newDeadline,
+        deadline: datetimeDeadline, // Send the datetime string
         completed: newCompleted,
       });
       setTodos([...todos, data]);
