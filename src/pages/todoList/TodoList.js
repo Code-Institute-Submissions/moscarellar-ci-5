@@ -9,6 +9,7 @@ const TodoList = () => {
   const [newDescription, setNewDescription] = useState("");
   const [newDeadline, setNewDeadline] = useState("");
   const [newCompleted, setNewCompleted] = useState(false);
+  const [showDescriptions, setShowDescriptions] = useState([]); 
 
   // Fetch the user's todos from the API
   useEffect(() => {
@@ -16,6 +17,7 @@ const TodoList = () => {
       try {
         const { data } = await axiosReq.get(`/todos`);
         setTodos(data.results);
+        
       } catch (error) {
         console.log(error);
       }
@@ -100,10 +102,18 @@ const TodoList = () => {
       <div className="todo-list-section">
         <h2>Active Todos</h2>
         <ul>
-          {activeTodos.map((todo) => (
+          {activeTodos.map((todo, index) => (
             <li key={todo.id}>
               <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
               <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <button onClick={() => {
+      const newShowDescriptions = [...showDescriptions];
+      newShowDescriptions[index] = !newShowDescriptions[index];
+      setShowDescriptions(newShowDescriptions);
+    }}>
+      {showDescriptions[index] ? "-" : "+"}
+    </button>
+    {showDescriptions[index] && <p>Description: {todo.description}</p>}
               <label>
                 <input
                   type="checkbox"
