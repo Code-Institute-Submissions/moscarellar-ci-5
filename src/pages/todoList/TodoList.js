@@ -77,27 +77,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <div className="add-todo-section">
-        <h2>Add Todo</h2>
-        <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Enter a new todo"
-        />
-        <textarea
-          value={newDescription}
-          onChange={(e) => setNewDescription(e.target.value)}
-          placeholder="Enter a description"
-        ></textarea>
-        <input
-          type="date"
-          value={newDeadline}
-          onChange={(e) => setNewDeadline(e.target.value)}
-          placeholder="Enter a deadline"
-        />
-        <button onClick={addTodo}>Add Todo</button>
-      </div>
+      
 
       <div className="todo-list-section">
         <h2>Active Todos</h2>
@@ -148,6 +128,49 @@ const TodoList = () => {
           ))}
         </ul>
       </div>
+
+      <div className="container">
+      <div className="row justify-content-center mt-5">
+      <div className="col-md-6">
+      <div className="card">
+        
+      <div className="add-todo-section">
+      <h2 className="card-title text-center">Add Todo</h2>
+      <div className="form-group">
+        <input
+          type="text"
+          value={newTodo}
+          className="form-control"
+          onChange={(e) => setNewTodo(e.target.value)}
+          placeholder="Enter a new todo"
+        />
+        </div>
+        <div className="form-group">
+        <textarea
+          value={newDescription}
+          className="form-control"
+          onChange={(e) => setNewDescription(e.target.value)}
+          placeholder="Enter a description"
+        ></textarea>
+        </div>
+
+        <div className="form-group">
+
+        <input
+          type="date"
+          value={newDeadline}
+          className="form-control"
+          onChange={(e) => setNewDeadline(e.target.value)}
+          placeholder="Enter a deadline"
+        />
+        </div>
+        <button className="btn btn-primary btn-block" onClick={addTodo}>Add Todo</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
     </div>
   );
 };
