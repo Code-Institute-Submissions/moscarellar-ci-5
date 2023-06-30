@@ -79,8 +79,7 @@ const TodoList = () => {
     <div>
       
 
-      <div className="container">
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="todo-list-section">
             <h2>Active Todos</h2>
@@ -130,11 +129,11 @@ const TodoList = () => {
                 ))}
               </tbody>
             </table>
-          </div>
+        
         </div>
         </div>
-        <div className="container">
-        <div className="col-md-6">
+        <div className="row justify-content-center container">
+        <div className=" row col-md-6">
           <div className="completed-todos-section">
             <h2>Completed Todos</h2>
             <table className="table">
