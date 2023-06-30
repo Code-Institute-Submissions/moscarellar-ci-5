@@ -79,54 +79,99 @@ const TodoList = () => {
     <div>
       
 
-      <div className="todo-list-section">
-        <h2>Active Todos</h2>
-        <ul>
-          {activeTodos.map((todo, index) => (
-            <li key={todo.id}>
-              <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-              <button onClick={() => {
-      const newShowDescriptions = [...showDescriptions];
-      newShowDescriptions[index] = !newShowDescriptions[index];
-      setShowDescriptions(newShowDescriptions);
-    }}>
-      {showDescriptions[index] ? "-" : "+"}
-    </button>
-    {showDescriptions[index] && <p>Description: {todo.description}</p>}
-              <label>
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleComplete(todo.id, todo.completed)}
-                />
-                Completed
-              </label>
-              <p>Deadline: {todo.deadline}</p>
-            </li>
-          ))}
-        </ul>
+      <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="todo-list-section">
+            <h2>Active Todos</h2>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Deadline</th>
+                  <th>Completed</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeTodos.map((todo, index) => (
+                  <tr key={todo.id}>
+                    <td>
+                      <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
+                    </td>
+                    <td>
+                      {showDescriptions[index] && <p>Description: {todo.description}</p>}
+                      <button
+                        onClick={() => {
+                          const newShowDescriptions = [...showDescriptions];
+                          newShowDescriptions[index] = !newShowDescriptions[index];
+                          setShowDescriptions(newShowDescriptions);
+                        }}
+                      >
+                        {showDescriptions[index] ? '-' : '+'}
+                      </button>
+                    </td>
+                    <td>{todo.deadline}</td>
+                    <td>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={todo.completed}
+                          onChange={() => toggleComplete(todo.id, todo.completed)}
+                        />
+                      
+                      </label>
+                    </td>
+                    <td>
+                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+        <div className="container">
+        <div className="col-md-6">
+          <div className="completed-todos-section">
+            <h2>Completed Todos</h2>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Deadline</th>
+                  <th>Completed</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {completedTodos.map((todo) => (
+                  <tr key={todo.id}>
+                    <td>
+                      <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
+                    </td>
+                    <td>{todo.deadline}</td>
+                    <td>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={todo.completed}
+                          onChange={() => toggleComplete(todo.id, todo.completed)}
+                        />
+                      </label>
+                    </td>
+                    <td>
+                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-
-      <div className="completed-todos-section">
-        <h2>Completed Todos</h2>
-        <ul>
-          {completedTodos.map((todo) => (
-            <li key={todo.id}>
-              <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleComplete(todo.id, todo.completed)}
-                />
-                Completed
-              </label>
-              <p>Deadline: {todo.deadline}</p>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className="container">

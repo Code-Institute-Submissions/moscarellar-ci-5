@@ -50,27 +50,53 @@ const TodoView = () => {
   return (
     <div>
       <h2>Todo Details</h2>
-      <input
-        type="text"
-        value={updatedTitle}
-        onChange={(e) => setUpdatedTitle(e.target.value)}
-      />
-      <textarea
-        value={updatedDescription}
-        onChange={(e) => setUpdatedDescription(e.target.value)}
-      ></textarea>
-      <input
-        type="date"
-        value={updatedDeadline}
-        onChange={(e) => setUpdatedDeadline(e.target.value)}
-      />
-      <input
-        type="checkbox"
-        checked={updatedCompleted}
-        onChange={(e) => setUpdatedCompleted(e.target.checked)}
-      />
-      <button onClick={updateTodo}>Update Todo</button>
-      <button>
+      <table className="table">
+        <tbody>
+          <tr>
+            <th>Title</th>
+            <td>
+              <input
+                type="text"
+                value={updatedTitle}
+                onChange={(e) => setUpdatedTitle(e.target.value)}
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td>
+              <textarea
+                value={updatedDescription}
+                onChange={(e) => setUpdatedDescription(e.target.value)}
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>Deadline</th>
+            <td>
+              <input
+                type="date"
+                value={updatedDeadline}
+                onChange={(e) => setUpdatedDeadline(e.target.value)}
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Completed</th>
+            <td>
+              <input
+                type="checkbox"
+                checked={updatedCompleted}
+                onChange={(e) => setUpdatedCompleted(e.target.checked)}
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button className="btn btn-primary" onClick={updateTodo}>
+        Update Todo
+      </button>
+      <button className="btn btn-secondary">
         <Link to="/todolist">Back to Todo List</Link>
       </button>
     </div>
