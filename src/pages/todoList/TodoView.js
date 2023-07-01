@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link, useParams } from "react-router-dom";
 
+import Row from "react-bootstrap/Row";
+
+import styles from "../../styles/TodoView.module.css";
+
 const TodoView = () => {
   const [todo, setTodo] = useState(null);
   const [updatedTitle, setUpdatedTitle] = useState("");
@@ -49,6 +53,7 @@ const TodoView = () => {
 
   return (
     <div>
+      <Row className={styles.Row}></Row>
       <h2>Todo Details</h2>
       <table className="table">
         <tbody>

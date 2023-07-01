@@ -1,8 +1,16 @@
 .App {
-  font-family: "DM Sans", sans-serif;
-  background-color: #f8c8c8;
+font-family: "DM Sans", sans-serif;
+background: rgb(255, 153, 51);
+background: linear-gradient(90deg, rgba(255, 153, 51, 1) 0%, rgba(255, 202, 102, 1) 50%, rgba(255, 251, 175, 1) 100%);
+
+
+
+
+
   min-height: 100vh;
 }
+
+
 
 .Main {
   padding-top: 81px;

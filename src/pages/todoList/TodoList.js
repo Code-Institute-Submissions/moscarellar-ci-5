@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
-
+import Filter from '../../components/Filter'
+import { Container, Row, Col } from "react-bootstrap";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -9,7 +10,8 @@ const TodoList = () => {
   const [newDescription, setNewDescription] = useState("");
   const [newDeadline, setNewDeadline] = useState("");
   const [newCompleted, setNewCompleted] = useState(false);
-  const [showDescriptions, setShowDescriptions] = useState([]); 
+  const [showDescriptions, setShowDescriptions] = useState([]);
+  const [filter, setFilter] = useState('All');
 
   // Fetch the user's todos from the API
   useEffect(() => {
@@ -71,36 +73,42 @@ const TodoList = () => {
     }
   };
 
-  // Filter completed and active todos
-  const completedTodos = todos.filter((todo) => todo.completed);
-  const activeTodos = todos.filter((todo) => !todo.completed);
+  // Filter todos
+  const filterTodo = (filterValue) => {
+    setFilter(filterValue);
+  };
+
+  let filteredTodos = todos;
+  if (filter === 'Active') {
+    filteredTodos = todos.filter((todo) => !todo.completed);
+  } else if (filter === 'Completed') {
+    filteredTodos = todos.filter((todo) => todo.completed);
+  }
 
   return (
-    <div>
+    <div >
+      <Container className="row justify-content-center">
       
+      <div className="card col-md-6 m-5">
+      <div className="row justify-content-center mt-3">
+          <Filter  filter_todo={filterTodo} />
+      </div>
+      </div>
+      </Container>
 
-      <div className="row justify-content-center">
+      <div className="row justify-content-center container ">
+  
         <div className="col-md-6">
-          <div className="todo-list-section">
-            <h2>Active Todos</h2>
+          <div className="container card">
+            <h4>{filter}</h4>
             <table className="table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Deadline</th>
-                  <th>Completed</th>
-                  <th></th>
-                </tr>
-              </thead>
               <tbody>
-                {activeTodos.map((todo, index) => (
+                {filteredTodos.map((todo, index) => (
                   <tr key={todo.id}>
                     <td>
-                      <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
-                    </td>
-                    <td>
-                      {showDescriptions[index] && <p>Description: {todo.description}</p>}
+                      <Link to={`/todos/${todo.id}`}>{todo.title}{showDescriptions[index] && <p>{todo.deadline} <p>{todo.description}</p></p>}
+                      </Link>
+                      <p></p>
                       <button
                         onClick={() => {
                           const newShowDescriptions = [...showDescriptions];
@@ -110,8 +118,7 @@ const TodoList = () => {
                       >
                         {showDescriptions[index] ? '-' : '+'}
                       </button>
-                    </td>
-                    <td>{todo.deadline}</td>
+                      </td>
                     <td>
                       <label>
                         <input
@@ -123,98 +130,61 @@ const TodoList = () => {
                       </label>
                     </td>
                     <td>
-                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>Delete</button>
+                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>D</button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            
+        </div>
+        {/* </Card>
+        </Row> */}
+        </div>
+
+        <div className="container">
+        <div className="row justify-content-center mt-5">
+        <div className="col-md-6">
+        <div className="card">
         
-        </div>
-        </div>
-        <div className="row justify-content-center container">
-        <div className=" row col-md-6">
-          <div className="completed-todos-section">
-            <h2>Completed Todos</h2>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Deadline</th>
-                  <th>Completed</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {completedTodos.map((todo) => (
-                  <tr key={todo.id}>
-                    <td>
-                      <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
-                    </td>
-                    <td>{todo.deadline}</td>
-                    <td>
-                      <label>
-                        <input
-                          type="checkbox"
-                          checked={todo.completed}
-                          onChange={() => toggleComplete(todo.id, todo.completed)}
-                        />
-                      </label>
-                    </td>
-                    <td>
-                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>Delete</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="add-todo-section">
+        <h2 className="card-title text-center">Add Todo</h2>
+        <div className="form-group">
+          <input
+            type="text"
+            value={newTodo}
+            className="form-control"
+            onChange={(e) => setNewTodo(e.target.value)}
+            placeholder="Enter a new todo"
+          />
           </div>
-        </div>
-      </div>
-      </div>
+          <div className="form-group">
+          <textarea
+            value={newDescription}
+            className="form-control"
+            onChange={(e) => setNewDescription(e.target.value)}
+            placeholder="Enter a description"
+          ></textarea>
+          </div>
 
-      <div className="container">
-      <div className="row justify-content-center mt-5">
-      <div className="col-md-6">
-      <div className="card">
-        
-      <div className="add-todo-section">
-      <h2 className="card-title text-center">Add Todo</h2>
-      <div className="form-group">
-        <input
-          type="text"
-          value={newTodo}
-          className="form-control"
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Enter a new todo"
-        />
+          <div className="form-group">
+
+          <input
+            type="date"
+            value={newDeadline}
+            className="form-control"
+            onChange={(e) => setNewDeadline(e.target.value)}
+            placeholder="Enter a deadline"
+          />
+          </div>
+          <button className="btn btn-primary btn-block" onClick={addTodo}>Add Todo</button>
         </div>
-        <div className="form-group">
-        <textarea
-          value={newDescription}
-          className="form-control"
-          onChange={(e) => setNewDescription(e.target.value)}
-          placeholder="Enter a description"
-        ></textarea>
+        </div>
+        </div>
+        </div>
         </div>
 
-        <div className="form-group">
-
-        <input
-          type="date"
-          value={newDeadline}
-          className="form-control"
-          onChange={(e) => setNewDeadline(e.target.value)}
-          placeholder="Enter a deadline"
-        />
-        </div>
-        <button className="btn btn-primary btn-block" onClick={addTodo}>Add Todo</button>
       </div>
-      </div>
-      </div>
-      </div>
-      </div>
-
     </div>
   );
 };

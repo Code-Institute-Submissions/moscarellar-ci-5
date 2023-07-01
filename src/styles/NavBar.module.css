@@ -1,7 +1,18 @@
 .NavBar {
-  background-color: #fde3e3;
+
+  background: linear-gradient(90deg, #FFFFFF, rgb(255, 153, 51));
+    
+    
+  
+  
+
+  
+border-bottom: 2px solid #800080;
+
   border: 1px solid #dadadf;
 }
+
+
 
 .NavLink {
   padding: 5px;
