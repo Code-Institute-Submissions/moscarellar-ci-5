@@ -53,57 +53,79 @@ const TodoView = () => {
 
   return (
     <div>
-      <Row className={styles.Row}></Row>
-      <h2>Todo Details</h2>
-      <table className="table">
-        <tbody>
-          <tr>
-            <th>Title</th>
-            <td>
-              <input
-                type="text"
-                value={updatedTitle}
-                onChange={(e) => setUpdatedTitle(e.target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>Description</th>
-            <td>
-              <textarea
-                value={updatedDescription}
-                onChange={(e) => setUpdatedDescription(e.target.value)}
-              ></textarea>
-            </td>
-          </tr>
-          <tr>
-            <th>Deadline</th>
-            <td>
-              <input
-                type="date"
-                value={updatedDeadline}
-                onChange={(e) => setUpdatedDeadline(e.target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>Completed</th>
-            <td>
-              <input
-                type="checkbox"
-                checked={updatedCompleted}
-                onChange={(e) => setUpdatedCompleted(e.target.checked)}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button className="btn btn-primary" onClick={updateTodo}>
-        Update Todo
-      </button>
-      <button className="btn btn-secondary">
-        <Link to="/todolist">Back to Todo List</Link>
-      </button>
+      <Row className={styles.Row}>
+        <h2>Todo Details</h2>
+        <table className="table">
+          <tbody>
+            <tr>
+              <th>Title</th>
+              <td>{todo.title}</td>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <td>{todo.description}</td>
+            </tr>
+            <tr>
+              <th>Deadline</th>
+              <td>{todo.deadline}</td>
+            </tr>
+          </tbody>
+        </table>
+      </Row>
+      <Row className={styles.Row}>
+        <h2>Update Todo</h2>
+        <table className="table">
+          <tbody>
+            <tr>
+              <th>Title</th>
+              <td>
+                <input
+                  type="text"
+                  value={updatedTitle}
+                  onChange={(e) => setUpdatedTitle(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <td>
+                <textarea
+                  value={updatedDescription}
+                  onChange={(e) => setUpdatedDescription(e.target.value)}
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th>Deadline</th>
+              <td>
+                <input
+                  type="date"
+                  value={updatedDeadline}
+                  onChange={(e) => setUpdatedDeadline(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>Completed</th>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={updatedCompleted}
+                  onChange={(e) => setUpdatedCompleted(e.target.checked)}
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button className="btn btn-primary" onClick={updateTodo}>
+          Update Todo
+        </button>
+      </Row>
+      <Row className={styles.Row}>
+        <button className="btn btn-secondary">
+          <Link to="/todolist">Back to Todo List</Link>
+        </button>
+      </Row>
     </div>
   );
 };

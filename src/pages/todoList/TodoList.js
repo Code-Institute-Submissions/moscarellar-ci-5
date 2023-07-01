@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import Filter from '../../components/Filter'
-import { Container, Row, Col } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
