@@ -131,7 +131,7 @@ const TodoList = () => {
                       </label>
                     </td>
                     <td>
-                      <button className="btn btn-danger"  onClick={() => deleteTodo(todo.id)}>D</button>
+                      <button className="btn"  onClick={() => deleteTodo(todo.id)}><i className="fas fa-trash-alt" /></button>
                     </td>
                   </tr>
                 ))}
