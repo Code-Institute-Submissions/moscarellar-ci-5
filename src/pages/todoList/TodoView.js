@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 
 import styles from "../../styles/TodoView.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 const TodoView = () => {
   const [todo, setTodo] = useState(null);
@@ -117,7 +118,7 @@ const TodoView = () => {
             </tr>
           </tbody>
         </table>
-        <button className="btn btn-primary" onClick={updateTodo}>
+        <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={updateTodo}>
           Update Todo
         </button>
       </Row>

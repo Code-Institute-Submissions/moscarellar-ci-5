@@ -9,10 +9,10 @@
 }
 
 .Content {
-  background-color: #e6e6e6;
+  background-color: #F8F9FA; /* Light background for contrast */
   padding: 10px;
   border-radius: 2px;
-  border: 1px solid #4d4d4d;
+  border: 1px solid #343A40; 
 }
 
 .FillerImage {
@@ -32,13 +32,13 @@
 }
 
 a {
-  color: #b3b3b3;
+  color: #FFC107; /* Use the yellow color for links */
   transition: color ease-in-out 0.3s;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #4d4d4d;
+  color: #FFA500; /* Orange color on hover */
 }
 
 input[type="file"] {
@@ -46,7 +46,7 @@ input[type="file"] {
 }
 
 i {
-  color: #b3b3b3;
+  color: #FFC107; /* Yellow color for icons */
   font-size: 1.6rem;
   padding: 7px;
   vertical-align: middle;
@@ -55,7 +55,7 @@ i {
 i:hover{
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #4d4d4d;
+  color: #FFA500; /* Orange color on hover */
 }
 
 figure {
@@ -68,11 +68,11 @@ figure {
   width: 5px;
 }
 *::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #F8F9FA; /* Light color for the track */
 }
 *::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #343A40; /* Dark color for the thumb */
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #0000FF; /* Blue color on hover */
 }

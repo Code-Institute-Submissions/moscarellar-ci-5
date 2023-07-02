@@ -3,6 +3,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import Filter from '../../components/Filter'
 import { Container} from "react-bootstrap";
+import btnStyles from "../../styles/Button.module.css";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -109,7 +110,7 @@ const TodoList = () => {
                       <Link to={`/todos/${todo.id}`}>{todo.title}{showDescriptions[index] && <p>{todo.deadline} <p>{todo.description}</p></p>}
                       </Link>
                       <p></p>
-                      <button
+                      <button className={`${btnStyles.Button} ${btnStyles.Blue}`}
                         onClick={() => {
                           const newShowDescriptions = [...showDescriptions];
                           newShowDescriptions[index] = !newShowDescriptions[index];
@@ -177,7 +178,9 @@ const TodoList = () => {
             placeholder="Enter a deadline"
           />
           </div>
-          <button className="btn btn-primary btn-block" onClick={addTodo}>Add Todo</button>
+          <div className="d-flex justify-content-center">
+          <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={addTodo}>Add Todo</button>
+          </div>
         </div>
         </div>
         </div>
