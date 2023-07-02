@@ -5,6 +5,7 @@ MyFilmApp is a website developed in order to share interesting material about fi
 Please find the link [here](https://ci-p5.herokuapp.com/).
 
 ![mock-up](src/assets/readme/mockup.png)
+![Palette](src/assets/readme/colorpalette.png)
 
 # Table of Contents
 
@@ -78,10 +79,8 @@ The goal for this project was to work on Project Example Idea 1: Content platfor
 ## Color Scheme
 The main colors used throughout the page are closely aligned to clean code, with white and simple design.
 
-<details><summary><b>Color Palette</b></summary>
-
 ![Palette](src/assets/readme/colorpalette.png)
-</details><br/>
+
 
 ## Color Palette
 
