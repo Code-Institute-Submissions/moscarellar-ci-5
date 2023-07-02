@@ -1,0 +1,10 @@
+.Post {
+    background-color: #343A40;
+    /* border: 1px solid #343A40; */
+    /* border-radius: 2px; */
+    margin-bottom: 16px;
+    text-align: center;
+    /* border-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color:#FFA500;
+  }

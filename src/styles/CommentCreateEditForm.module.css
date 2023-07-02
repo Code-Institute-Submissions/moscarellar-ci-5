@@ -1,12 +1,12 @@
 .Form {
   border: none;
-  border-bottom: 2px #0000FF solid; /* Blue from your palette */
+  border-bottom: 2px #0000FF solid; 
 }
 
 .Button {
   border: none;
-  background-color: #343A40; /* Dark grey from your palette */
-  color: #F8F9FA; /* Light grey from your palette */
+  background-color: #343A40; 
+  color: #F8F9FA; 
   border-radius: 100px;
   padding: 4px 10px;
   min-width: 75px;
@@ -15,6 +15,6 @@
 
 .Button:hover {
   cursor: pointer;
-  background-color: #F8F9FA; /* Light grey from your palette */
-  color: #343A40; /* Dark grey from your palette */
+  background-color: #F8F9FA;
+  color: #343A40; 
 }

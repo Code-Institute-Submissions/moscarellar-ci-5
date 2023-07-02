@@ -2,16 +2,45 @@
 
 MyFilmApp is a website developed in order to share interesting material about films. However, today, it turned to be a big sharing platform.
 
+# Table of Contents
+
+- [MyFilmApp - Frontend React application Live link](https://ci-p5.herokuapp.com/)
+- [Project Goals](#project-goals)
+- [User Experience](#user-experience)
+  - [User Stories](#user-stories)
+    - [User authentication/authorisation & Navigation](#user-authenticationauthorisation--navigation)
+    - [Main Feed functionality](#main-feed-functionality)
+    - [Post: ADD](#post-add)
+    - [Post: Functionality](#post-functionality)
+    - [Profile](#profile)
+- [Design](#design)
+  - [Color Scheme](#color-scheme)
+  - [Color Palette](#color-palette)
+  - [Wireframes](#wireframes)
+- [Agile](#agile)
+- [Future Features Ideas / Improvements](#future-features-ideas--improvements)
+- [Technologies](#technologies)
+  - [Languages](#languages)
+  - [Programs, libraries, frameworks and dependencies](#programs-libraries-frameworks-and-dependencies)
+- [Testing](#testing)
+  - [Testing of implemented User Stories from User Experience (UX) section](#testing-of-implemented-user-stories-from-user-experience-ux-section)
+- [Deployment](#deployment)
+  - [Development](#development)
+  - [API Deployment](#api-deployment)
+- [Components](#components)
+  - [Components in our project](#components-in-our-project)
+- [Improvements and Bugs](#improvements-and-bugs)
+
+
 # Project Goals
 
 The goal for this project was to work on Project Example Idea 1: Content platform, which includes all the basic functionality in order for potential visitors to start using the website in its intended way. These features include:
 
-- The platform should enable users to CRUD and vote.
+- The platform should enable users to CRUD.
 - Content should be searchable.
-- Search results can be filtered on hashtags.
 - Authentication/authorization functionality
-- easy and clear navigation within the whole page
-- possibility to change profile information (bio text, image)
+- Easy and clear navigation within the whole page
+- Possibility to change profile information (bio text, image)
 
 # User Experience
 
@@ -43,7 +72,40 @@ The goal for this project was to work on Project Example Idea 1: Content platfor
 # Design
 
 ## Color Scheme
-The main colors used throughout the page are closely aligned to clean code, with white and simple design. 
+The main colors used throughout the page are closely aligned to clean code, with white and simple design.
+
+<details><summary><b>Color Palette</b></summary>
+
+![Palette](src/assets/readme/colorpalette.png)
+</details><br/>
+
+## Color Palette
+
+In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), and 0000FF (Blue) can be appropriate and beneficial for the following reasons:
+
+- Visual Appeal: The combination of light and dark shades in the palette creates a visually appealing and balanced design.
+- Readability: The high contrast between the light background and dark text color ensures good readability.
+- Attention and Focus: Vibrant colors can be used to draw attention to important elements.
+- Emotional Response: Colors can evoke positive emotions and add a playful touch.
+- Branding and Recognition: Consistent use of colors helps establish a strong visual identity.
+- Differentiation: The chosen color palette sets the app apart from others.
+
+### Color Usage
+
+The colors from the palette are used in the app as follows:
+
+| Color    | Usage                                                   |
+|----------|---------------------------------------------------------|
+| F8F9FA   | Used as the background color in the .Content class.      |
+| 343A40   | Used in various classes such as .Post, .Heart, etc.      |
+| FFC107   | Used in the .NavLink, .logo, a, and i classes.           |
+| 1A1A1A   | Used in the .App and .NavBar classes.                    |
+| 4D4D4D   | Used in the .Content and .NavBar classes.                |
+| FFA500   | Used in the .Heart and .HeartOutline:hover classes.      |
+| 0000FF   | Used in the *::-webkit-scrollbar-thumb:hover class.      |
+
+The color palette has been carefully chosen to provide visual appeal, readability, attention focus, and emotional response. It creates a distinctive and engaging experience for users, allowing them to share memes and manage their to-do lists with ease.
+
 
 ## Wireframes
 
