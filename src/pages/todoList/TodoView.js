@@ -54,9 +54,8 @@ const TodoView = () => {
   }
 
   return (
-    <div>
+    <div >
       <Container className="row justify-content-center">
-      
       <div className="card col-md-6 m-5">
       <div className="row justify-content-center mt-3">
   
@@ -83,9 +82,10 @@ const TodoView = () => {
       </div>
       </Container>
 
-<Container>
-<div className="card col-md-6 m-5">
-      <div className="row justify-content-center mt-3">
+      <Container className="row justify-content-center">
+      <div className="card col-md-6 m-5">
+      <div className="justify-content-center mt-3">
+              
       <Row className={styles.Row}>
         <h2>Update Todo</h2>
         <table className="table">
