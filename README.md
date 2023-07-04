@@ -1,11 +1,12 @@
-# MyFilmApp - Frontend React application [Live link](https://ci-p5.herokuapp.com/)
+# MyFilmApp - Frontend React application 
+
+[Live link](https://ci-p5.herokuapp.com/)
 
 MyFilmApp is a website developed in order to share interesting material about films. However, today, it turned to be a big sharing platform.
 
 Please find the link [here](https://ci-p5.herokuapp.com/).
 
 ![mock-up](src/assets/readme/mockup.png)
-![Palette](src/assets/readme/colorpalette.png)
 
 # Table of Contents
 

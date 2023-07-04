@@ -12,3 +12,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
+
+  .Input {
+    background-color: #F8F9FA;
+    color: #343A40;
+  }
+  
+  .Textarea {
+    background-color: #F8F9FA;
+    color: #343A40;
+    border-color: #343A40;
+  }
+  

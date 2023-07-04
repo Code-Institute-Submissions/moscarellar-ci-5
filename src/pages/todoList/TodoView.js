@@ -3,6 +3,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Link, useParams } from "react-router-dom";
 
 import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Row";
 
 import styles from "../../styles/TodoView.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -54,6 +55,11 @@ const TodoView = () => {
 
   return (
     <div>
+      <Container className="row justify-content-center">
+      
+      <div className="card col-md-6 m-5">
+      <div className="row justify-content-center mt-3">
+  
       <Row className={styles.Row}>
         <h2>Todo Details</h2>
         <table className="table">
@@ -73,6 +79,13 @@ const TodoView = () => {
           </tbody>
         </table>
       </Row>
+      </div>
+      </div>
+      </Container>
+
+<Container>
+<div className="card col-md-6 m-5">
+      <div className="row justify-content-center mt-3">
       <Row className={styles.Row}>
         <h2>Update Todo</h2>
         <table className="table">
@@ -84,6 +97,7 @@ const TodoView = () => {
                   type="text"
                   value={updatedTitle}
                   onChange={(e) => setUpdatedTitle(e.target.value)}
+                  className={styles.Input}
                 />
               </td>
             </tr>
@@ -93,6 +107,7 @@ const TodoView = () => {
                 <textarea
                   value={updatedDescription}
                   onChange={(e) => setUpdatedDescription(e.target.value)}
+                  className={styles.Textarea}
                 ></textarea>
               </td>
             </tr>
@@ -103,6 +118,7 @@ const TodoView = () => {
                   type="date"
                   value={updatedDeadline}
                   onChange={(e) => setUpdatedDeadline(e.target.value)}
+                  className={styles.Input}
                 />
               </td>
             </tr>
@@ -118,15 +134,22 @@ const TodoView = () => {
             </tr>
           </tbody>
         </table>
-        <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={updateTodo}>
+        <button
+          className={`${btnStyles.Button} ${btnStyles.Blue}`}
+          onClick={updateTodo}
+          style={{ backgroundColor: "#343A40", color: "#F8F9FA" }}
+        >
           Update Todo
         </button>
       </Row>
       <Row className={styles.Row}>
-        <button className="btn btn-secondary">
+        <button className="btn btn-secondary" style={{ backgroundColor: "#4D4D4D", color: "#F8F9FA" }}>
           <Link to="/todolist">Back to Todo List</Link>
         </button>
       </Row>
+      </div>
+      </div>
+      </Container>
     </div>
   );
 };

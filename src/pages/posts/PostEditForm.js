@@ -22,8 +22,9 @@ function PostEditForm() {
     title: "",
     content: "",
     image: "",
+    is_meme: ""
   });
-  const { title, content, image } = postData;
+  const { title, content, image, is_meme } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -33,9 +34,9 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, image, is_owner } = data;
+        const { title, content, image, is_owner, is_meme } = data;
 
-        is_owner ? setPostData({ title, content, image }) : history.push("/");
+        is_owner ? setPostData({ title, content, image, is_meme }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -67,6 +68,11 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("content", content);
+
+    if(is_meme){
+      formData.append("is_meme", true)
+    }
+    
 
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
@@ -136,7 +142,19 @@ function PostEditForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-              <figure>
+              { is_meme ? (<><figure className="main-cont-img">
+                  <p className="title-meme">{title}</p>
+                    <Image className={appStyles.Image} src={image} rounded />
+                    <p className="text-meme">{content}</p>
+                  </figure>
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      htmlFor="image-upload"
+                    >
+                      Change the image
+                    </Form.Label>
+                  </div> </>) : ( <> <figure>
                 <Image className={appStyles.Image} src={image} rounded />
               </figure>
               <div>
@@ -153,7 +171,8 @@ function PostEditForm() {
                 accept="image/*"
                 onChange={handleChangeImage}
                 ref={imageInput}
-              />
+              /></>)}
+            
             </Form.Group>
             {errors?.image?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
