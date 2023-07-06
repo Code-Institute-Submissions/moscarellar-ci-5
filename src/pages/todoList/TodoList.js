@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Filter from '../../components/Filter'
 import { Container} from "react-bootstrap";
 import btnStyles from "../../styles/Button.module.css";
+import Loading2 from "../../animations/Loading2";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -13,6 +14,9 @@ const TodoList = () => {
   const [newCompleted, setNewCompleted] = useState(false);
   const [showDescriptions, setShowDescriptions] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [isLoading, setIsLoading] = useState({})
+
+  console.log(isLoading)
 
   // Fetch the user's todos from the API
   useEffect(() => {
@@ -51,9 +55,11 @@ const TodoList = () => {
 
   // Delete a todo
   const deleteTodo = async (id) => {
+    setIsLoading(prev => ({...prev, [id]:true}))
     try {
       await axiosReq.delete(`/todos/${id}`);
       setTodos(todos.filter((todo) => todo.id !== id));
+      setIsLoading(prev => ({...prev, [id]:false}))
     } catch (error) {
       console.log(error);
     }
@@ -131,7 +137,7 @@ const TodoList = () => {
                       </label>
                     </td>
                     <td>
-                      <button className="btn"  onClick={() => deleteTodo(todo.id)}><i className="fas fa-trash-alt" /></button>
+                      <button className="btn"  onClick={() => deleteTodo(todo.id)}>{isLoading[todo.id] ? <Loading2 /> : <i className="fas fa-trash-alt" />}</button>
                     </td>
                   </tr>
                 ))}

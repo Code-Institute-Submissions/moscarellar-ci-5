@@ -19,10 +19,12 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import Loading from "../../animations/Loading";
 
 function PostCreateForm() {
   useRedirect('loggedOut')
   const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false)
 
   const [postData, setPostData] = useState({
     title: "",
@@ -53,6 +55,7 @@ function PostCreateForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true)
     const formData = new FormData();
 
     formData.append("title", title);
@@ -61,6 +64,7 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      setIsLoading(false)
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);
@@ -109,8 +113,8 @@ function PostCreateForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" disabled={isLoading}>
+        {isLoading ? <Loading /> : 'create'}
       </Button>
     </div>
   );
