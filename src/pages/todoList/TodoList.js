@@ -142,8 +142,15 @@ const TodoList = () => {
                       </label>
                     </td>
                     <td>
+                    <Link to={`/todos/${todo.id}`}> <i className="fas fa-edit" /> 
+                      </Link>
+                    </td>
+                    <td>
                       <button className="btn"  onClick={() => deleteTodo(todo.id)}>{isLoading[todo.id] ? <Loading2 /> : <i className="fas fa-trash-alt" />}</button>
                     </td>
+                 
+                     
+
                   </tr>
                 ))}
               </tbody>
