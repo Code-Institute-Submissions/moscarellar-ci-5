@@ -57,7 +57,6 @@ const TodoList = () => {
     }
     setIsAdding(false);
   };
-  
 
   // Delete a todo
   const deleteTodo = async (id) => {
@@ -194,6 +193,7 @@ const TodoList = () => {
           <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={addTodo} disabled={isAdding}>
   {isAdding ? <Loading /> : 'Add Todo'}
 </button>
+
 
           </div>
         </div>

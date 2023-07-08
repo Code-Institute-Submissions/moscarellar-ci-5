@@ -7,6 +7,9 @@ import Container from "react-bootstrap/Row";
 
 import styles from "../../styles/TodoView.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Loading from "../../animations/Loading";
+
+
 
 const TodoView = () => {
   const [todo, setTodo] = useState(null);
@@ -14,6 +17,7 @@ const TodoView = () => {
   const [updatedDescription, setUpdatedDescription] = useState("");
   const [updatedDeadline, setUpdatedDeadline] = useState("");
   const [updatedCompleted, setUpdatedCompleted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Add isLoading state variable
   const { id } = useParams();
 
   // Fetch the specific todo from the API
@@ -37,6 +41,7 @@ const TodoView = () => {
   const updateTodo = async () => {
     try {
       const datetimeDeadline = `${updatedDeadline}T00:00:00`;
+      setIsLoading(true); // Set loading state to true
       const { data } = await axiosReq.put(`/todos/${id}`, {
         title: updatedTitle,
         description: updatedDescription,
@@ -44,6 +49,7 @@ const TodoView = () => {
         completed: updatedCompleted,
       });
       setTodo(data);
+      setIsLoading(false); // Set loading state back to false after the API request is complete
     } catch (error) {
       console.log(error);
     }
@@ -52,6 +58,8 @@ const TodoView = () => {
   if (!todo) {
     return <div>Loading...</div>;
   }
+
+
 
   return (
     <div >
@@ -137,13 +145,16 @@ const TodoView = () => {
         <button
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
           onClick={updateTodo}
-          style={{ backgroundColor: "#343A40", color: "#F8F9FA" }}
-        >
-          Update Todo
+          disabled={isLoading}>
+          {isLoading ? <Loading /> : 'Update'}
+        
         </button>
+
+
+
       </Row>
       <Row className={styles.Row}>
-        <button className="btn btn-secondary" style={{ backgroundColor: "#4D4D4D", color: "#F8F9FA" }}>
+        <button className="btn btn-secondary">
           <Link to="/todolist">Back to Todo List</Link>
         </button>
       </Row>
