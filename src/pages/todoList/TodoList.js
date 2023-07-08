@@ -5,8 +5,11 @@ import Filter from '../../components/Filter'
 import { Container} from "react-bootstrap";
 import btnStyles from "../../styles/Button.module.css";
 import Loading2 from "../../animations/Loading2";
+import Loading from "../../animations/Loading";
 
 const TodoList = () => {
+  const [isAdding, setIsAdding] = useState(false);
+
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [newDescription, setNewDescription] = useState("");
@@ -35,6 +38,7 @@ const TodoList = () => {
 
   // Add a new todo
   const addTodo = async () => {
+    setIsAdding(true);
     try {
       const datetimeDeadline = `${newDeadline}T00:00:00`; // Add a time to the date
       const { data } = await axiosReq.post("/todos/", {
@@ -51,7 +55,9 @@ const TodoList = () => {
     } catch (error) {
       console.log(error);
     }
+    setIsAdding(false);
   };
+  
 
   // Delete a todo
   const deleteTodo = async (id) => {
@@ -185,7 +191,10 @@ const TodoList = () => {
           />
           </div>
           <div className="d-flex justify-content-center">
-          <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={addTodo}>Add Todo</button>
+          <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={addTodo} disabled={isAdding}>
+  {isAdding ? <Loading /> : 'Add Todo'}
+</button>
+
           </div>
         </div>
         </div>
