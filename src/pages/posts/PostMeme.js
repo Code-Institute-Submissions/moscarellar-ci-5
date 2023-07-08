@@ -1,6 +1,8 @@
 // creates MEME Post
 
 import React, { useRef, useState } from "react";
+import Loading from "../../animations/Loading";
+
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -23,6 +25,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostMeme() {
+
+  const [isLoading, setIsLoading] = useState(false);
   useRedirect('loggedOut')
   const [errors, setErrors] = useState({});
 
@@ -56,23 +60,27 @@ function PostMeme() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const formData = new FormData();
-
+  
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
     formData.append("is_meme", 1);
-
+  
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      setIsLoading(false);
       history.push(`/posts/${data.id}`);
     } catch (err) {
+      setIsLoading(false);
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
     }
   };
+  
 
   const textFields = (
     <div className="text-center">
@@ -114,9 +122,10 @@ function PostMeme() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
-      </Button>
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" disabled={isLoading}>
+  {isLoading ? <Loading /> : 'create'}
+</Button>
+
     </div>
   );
 
