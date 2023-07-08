@@ -7,6 +7,8 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
+import Loading from "../../animations/Loading";
+
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
@@ -16,6 +18,10 @@ import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PostEditForm() {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -63,31 +69,33 @@ function PostEditForm() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
+  event.preventDefault();
+  setIsLoading(true);
+  const formData = new FormData();
 
-    formData.append("title", title);
-    formData.append("content", content);
+  formData.append("title", title);
+  formData.append("content", content);
 
-    if(is_meme){
-      formData.append("is_meme", true)
+  if(is_meme){
+    formData.append("is_meme", true)
+  }
+
+  if (imageInput?.current?.files[0]) {
+    formData.append("image", imageInput.current.files[0]);
+  }
+
+  try {
+    await axiosReq.put(`/posts/${id}/`, formData);
+    setIsLoading(false);
+    history.push(`/posts/${id}`);
+  } catch (err) {
+    setIsLoading(false);
+    console.log(err);
+    if (err.response?.status !== 401) {
+      setErrors(err.response?.data);
     }
-    
-
-    if (imageInput?.current?.files[0]) {
-      formData.append("image", imageInput.current.files[0]);
-    }
-
-    try {
-      await axiosReq.put(`/posts/${id}/`, formData);
-      history.push(`/posts/${id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
-    }
-  };
+  }
+};
 
   const textFields = (
     <div className="text-center">
@@ -128,9 +136,10 @@ function PostEditForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
-      </Button>
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" disabled={isLoading}>
+  {isLoading ? <Loading /> : 'save'}
+</Button>
+
     </div>
   );
 
