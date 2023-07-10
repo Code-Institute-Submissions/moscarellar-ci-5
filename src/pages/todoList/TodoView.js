@@ -9,13 +9,11 @@ import styles from "../../styles/TodoView.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Loading from "../../animations/Loading";
 
-
-
 const TodoView = () => {
   const [todo, setTodo] = useState(null);
   const [updatedTitle, setUpdatedTitle] = useState("");
   const [updatedDescription, setUpdatedDescription] = useState("");
-  const [updatedDeadline, setUpdatedDeadline] = useState("");
+  const [updatedDeadline, setUpdatedDeadline] = useState(""); // Initialize as empty string
   const [updatedCompleted, setUpdatedCompleted] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Add isLoading state variable
   const { id } = useParams();
@@ -28,7 +26,8 @@ const TodoView = () => {
         setTodo(data);
         setUpdatedTitle(data.title);
         setUpdatedDescription(data.description);
-        setUpdatedDeadline(data.deadline);
+        // If data.deadline exists, format it to 'YYYY-MM-DD'. If not, set to current date.
+        setUpdatedDeadline(data.deadline ? new Date(data.deadline).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]);
         setUpdatedCompleted(data.completed);
       } catch (error) {
         console.log(error);
