@@ -76,3 +76,16 @@ figure {
 *::-webkit-scrollbar-thumb:hover {
   background: #0000FF; /* Blue color on hover */
 }
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  .Main {
+    padding-top: 120px; /* Increase padding for smaller screens */
+  }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 400px) {
+  .Main {
+    padding-top: 140px; /* Further increase padding for very small screens */
+  }
+}
