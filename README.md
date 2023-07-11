@@ -1,8 +1,11 @@
-# MyFilmApp - Frontend React application 
+# MyFilmApp - Frontend React application - 3rd Submission Attempt
 
 [Live link](https://ci-p5.herokuapp.com/)
 
-MyFilmApp is a website developed in order to share interesting material about films. However, today, it turned to be a big sharing platform.
+To Share + began as MyFilmApp. It was initially a Film Blog. After some improvements and other requirements: TO DO List have been implemented and is the focus of this App. 
+However,  you can also find a variation of the traditinal Post. Now we can render the Post in a different way, so you can create Memes as well.
+
+This project was developed within the Diploma in Software Development (Advanced Front End)
 
 Please find the link [here](https://ci-p5.herokuapp.com/).
 
@@ -12,6 +15,7 @@ Please find the link [here](https://ci-p5.herokuapp.com/).
 
 - [MyFilmApp - Frontend React application Live link](https://ci-p5.herokuapp.com/)
 - [Project Goals](#project-goals)
+- [Updates](#updates)
 - [User Experience](#user-experience)
   - [User Stories](#user-stories)
     - [User authentication/authorisation & Navigation](#user-authenticationauthorisation--navigation)
@@ -19,6 +23,7 @@ Please find the link [here](https://ci-p5.herokuapp.com/).
     - [Post: ADD](#post-add)
     - [Post: Functionality](#post-functionality)
     - [Profile](#profile)
+    - [Todo](#todo)
 - [Design](#design)
   - [Color Scheme](#color-scheme)
   - [Color Palette](#color-palette)
@@ -29,13 +34,14 @@ Please find the link [here](https://ci-p5.herokuapp.com/).
   - [Languages](#languages)
   - [Programs, libraries, frameworks and dependencies](#programs-libraries-frameworks-and-dependencies)
 - [Testing](#testing)
-  - [Testing of implemented User Stories from User Experience (UX) section](#testing-of-implemented-user-stories-from-user-experience-ux-section)
+  - [Testing of implemented User Stories](#testing-of-implemented-user-stories)
 - [Deployment](#deployment)
   - [Development](#development)
   - [API Deployment](#api-deployment)
 - [Components](#components)
   - [Components in our project](#components-in-our-project)
 - [Improvements and Bugs](#improvements-and-bugs)
+- [Acknowledgements](#Acknowledgements)
 
 
 # Project Goals
@@ -47,6 +53,26 @@ The goal for this project was to work on Project Example Idea 1: Content platfor
 - Authentication/authorization functionality
 - Easy and clear navigation within the whole page
 - Possibility to change profile information (bio text, image)
+
+# Updates
+
+After two failing attempts I have deeply considered the requirements and feedbacks provided in past 2 attempts. As a result of this analysis I worked on the following improvements:
+
+- Focus on a Todo List as main improvement of the App.
+- Solve issue with rendering Meme in Post Meme.
+- Work in a different color palette for a consistent and coherent deign.
+
+The following actions were taken as result of the feedback provided on both past attempts: 
+
+| Criterion | Meets Criterion | Reason                                                                                     | Solution                                                                                  |
+|-----------|-----------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| 1.1       | No              | Design of the site is based too heavily on course materials                                | Provide more original design elements and minimize reliance on course materials.            |
+| 2.2       | No              | The design section contains the color scheme but the wireframes, mockups, or diagrams are not included. | Include wireframes, mockups, or diagrams in the design section                              |
+| 3.10      | No              | Manual testing steps are missing or lacking in any meaningful detail for the Back-End application | Add detailed manual testing steps for the Back-End application                              |
+| 3.14      | No              | The deployment process is missing, or lacking in any meaningful detail                      | Include a clear and detailed deployment process                                             |
+| 1.1       | No              | The meme records are not getting created from the UI. Design of the site is based too heavily on course work | Investigate and fix the issue causing meme records not to be created from the UI            |
+| 3.2       | No              | There are an insufficient number of custom models present and/or custom models present are limited in scope to those present on the course walkthrough project and are not indicative of abilities with custom model design. | Create more custom models that showcase a wider range of abilities in custom model design |
+
 
 # User Experience
 
@@ -74,6 +100,13 @@ The goal for this project was to work on Project Example Idea 1: Content platfor
 ### 5. Profile
 - As a logged in user I can edit my profile (change my profile picture and bio)
 - As a logged in user I can update my username and password
+
+### 6. Todo 
+- As a logged in user I can access my Todo List
+- As a logged in user I can perfrom CRUD actions over my Todo List
+- As a logged in user I can access the Specific View of the Todo List
+- As a logged in user I can Edit the contents of the Todo List
+- As a logged in user I can filter my Todos in Active, Completed, All
 
 # Design
 
@@ -113,7 +146,7 @@ The color palette has been carefully chosen to provide visual appeal, readabilit
 
 ## Wireframes
 
-Please, find the first version of our Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
+Please, find the first version of my Wireframes. I did use this initial Wireframes for reference. Done with [Balsamiq](https://balsamiq.com).
 
 <details><summary><b>Wireframes - Feed</b></summary>
 
@@ -147,6 +180,10 @@ Please, find the first version of our Wireframes. I did use this initial Wirefra
 
 For this project the GitHub Kanban agile project management tool was used to create User Stories
 
+[Click here to check the board](https://github.com/users/moscarellar/projects/1)
+
+![Github Kanban](src/assets/readme/tool.png)
+
 # Future Features Ideas / Improvements
 
 Due to time constrains, these additional feature ideas could not be included in this project, but can be added in the future: 
@@ -178,78 +215,105 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 - [W3C Markup Validator](https://validator.w3.org/)
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-## Testing of implemented User Stories from User Experience (UX) section
+## Testing
 
-Testing Plan:
-
-### 1. User authentication/authorisation & Navigation 
+## User authentication/authorisation & Navigation
 User authentication/authorisation & Navigation
 
-Test cases:
-Verify that only authenticated users can access protected pages
-Verify that unauthenticated users are redirected to the login page
-Verify that user credentials are correctly validated
-Testing actions:
-Attempt to access protected pages as an unauthenticated user
-Attempt to access protected pages as an authenticated user with invalid credentials
-Attempt to access protected pages as an authenticated user with valid credentials
-Expected results:
-Unauthenticated users should be redirected to the login page
-Users with invalid credentials should be denied access
-Users with valid credentials should be granted access
+### Test cases
+- Verify that only authenticated users can access protected pages
+- Verify that unauthenticated users are redirected to the login page
+- Verify that user credentials are correctly validated
 
-### 2. Main Feed functionality
+### Testing actions
+- Attempt to access protected pages as an unauthenticated user
+- Attempt to access protected pages as an authenticated user with invalid credentials
+- Attempt to access protected pages as an authenticated user with valid credentials
+
+### Expected results
+- Unauthenticated users should be redirected to the login page
+- Users with invalid credentials should be denied access
+- Users with valid credentials should be granted access
+
+## Main Feed functionality
 Main Feed functionality
 
-Test cases:
-Verify that posts are displayed in reverse chronological order
-Verify that posts are displayed with the correct author and timestamp
-Testing actions:
-Create multiple posts with different authors and timestamps
-Verify that posts are displayed in the correct order
-Expected results:
-Posts should be displayed in reverse chronological order
-Posts should be displayed with the correct author and timestamp
+### Test cases
+- Verify that posts are displayed in reverse chronological order
+- Verify that posts are displayed with the correct author and timestamp
 
-### 3. Adding a post
+### Testing actions
+- Create multiple posts with different authors and timestamps
+- Verify that posts are displayed in the correct order
+
+### Expected results
+- Posts should be displayed in reverse chronological order
+- Posts should be displayed with the correct author and timestamp
+
+## Adding a post
 Adding a post
 
-Test cases:
-Verify that only authenticated users can add posts
-Verify that new posts are displayed on the main feed
-Testing actions:
-Attempt to add a post as an unauthenticated user
-Attempt to add a post as an authenticated user
-Expected results:
-Unauthenticated users should be denied access to the "Add Post" page
-Authenticated users should be able to add posts, which should then be displayed on the main feed
+### Test cases
+- Verify that only authenticated users can add posts
+- Verify that new posts are displayed on the main feed
 
-### 4. Post page functionality
+### Testing actions
+- Attempt to add a post as an unauthenticated user
+- Attempt to add a post as an authenticated user
+
+### Expected results
+- Unauthenticated users should be denied access to the "Add Post" page
+- Authenticated users should be able to add posts, which should then be displayed on the main feed
+
+## Post page functionality
 Post page functionality
 
-Test cases:
-Verify that users can view individual posts
-Verify that users can like and comment on posts
-Testing actions:
-Click on a post from the main feed to view the post page
-Attempt to like and comment on the post
-Expected results:
-Users should be able to view individual posts
-Users should be able to like and comment on posts
+### Test cases
+- Verify that users can view individual posts
+- Verify that users can like and comment on posts
 
-### 5. Profile page functionality
+### Testing actions
+- Click on a post from the main feed to view the post page
+- Attempt to like and comment on the post
+
+### Expected results
+- Users should be able to view individual posts
+- Users should be able to like and comment on posts
+
+## Profile page functionality
 Profile page functionality
 
-Test cases:
-Verify that users can view their own profile page
-Verify that users can view other users' profile pages
-Testing actions:
-Navigate to the user's own profile page
-Navigate to another user's profile page
-Expected results:
-Users should be able to view their own profile page
-Users should be able to view other users' profile pages.
+### Test cases
+- Verify that users can view their own profile page
+- Verify that users can view other users' profile pages
 
+### Testing actions
+- Navigate to the user's own profile page
+- Navigate to another user's profile page
+
+### Expected results
+- Users should be able to view their own profile page
+- Users should be able to view other users' profile pages
+
+## Todo List funcionality
+Todo List functionality
+
+### Test cases
+- Verify that users can check their todo list
+- Verify that users can add, create a todo
+- Verify that users can delete a todo
+- Verify that users can update a todo
+- Verify that users can filter todos as per state of completed
+
+### Testing actions
+- Navigate to the user's todo list
+- Click over a todo, or edit button
+- Perform delete of a todo
+- Filter todos as completed, all or completed
+
+### Expected results
+- Users should be able to view their todo list
+- Users should be able to perform CRUD actions
 
 # Deployment
 
@@ -346,8 +410,17 @@ Improved software quality: Reusable components are tested, validated, and proven
 
 # Improvements and Bugs
 
-I wanted to provide an update on the current status of my bugs and improvements. As I am still learning the React JS framework, there are some issues present on the Meme Page that I am actively working to fix. 
+This project will turn into a Common Placebook after this evaluation is finish.
+During the evolution of the project, the Todo List was implemented. After some time developing this feature, I came with the idea of a Common Placebook, which is a way to store knowledge. 
 
-I need to modify the back-end POST to include the Meme Post Page. While working on this, I encountered some confusion on how to change the form to DIVs and how to print the Divs on the images. I am currently researching the best approach and will make the necessary changes as soon as possible.
+This will requiere of Searching implementation into the todo list.
+Also, categories are needed in order to store the knowledge by categories.
 
-Future improvements include availability to display a link preview when a link is shared on our platform in a post.
+More usage of animations and beautiful UI is on my interest, that is one of the reasons of Lottie usage in the project. In the future I would like to do more interactive animations.
+
+At the moments, I have not found any bugs.
+
+## Acknowledgements
+
+I would really like to appreciate the Student Support team. 
+Specially to the tutoring service, which I heavily used on the last months to develop this project. Also, big THANK YOU, to student support for understanding my case and providing support so I could finish my Diploma!

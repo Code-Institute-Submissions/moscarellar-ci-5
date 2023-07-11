@@ -35,3 +35,8 @@ h5 {
   color: #343A40; 
 }
 
+.lazy-load-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

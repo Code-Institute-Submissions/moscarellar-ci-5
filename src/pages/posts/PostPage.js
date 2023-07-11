@@ -23,9 +23,6 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import PostViewMeme from "./PostViewMeme";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom";
-// import { axiosRes } from "../../api/axiosDefaults";
-
-
 
 function PostPage() {
   const { id } = useParams();
@@ -71,15 +68,6 @@ function PostPage() {
       console.log(err);
     }
   };
-
-  // const PostDet = (props) => {
-  //   const {
-  //     id,
-  //     profile_image,
-  //     updated_at,
-  //     postPage,
-  //   } = props;
-  
 
 
   return (
