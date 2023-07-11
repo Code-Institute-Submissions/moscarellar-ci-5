@@ -24,3 +24,24 @@
     border-color: #343A40;
   }
   
+  @media (max-width: 413px) {
+    .noBorder {
+      border: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .Input, .Textarea {
+      width: 50%;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 12px;
+    }
+    h2 {
+      font-size: 20px; /* Adjust the font size as per your preference */
+    }
+  }

@@ -113,7 +113,7 @@ const TodoList = () => {
         <div className="col-md-6">
           <div className="container card">
             <h4>{filter}</h4>
-            <table className="table">
+            <table>
               <tbody>
                 {filteredTodos.map((todo, index) => (
                   <tr key={todo.id}>

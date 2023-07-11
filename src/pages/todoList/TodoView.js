@@ -64,14 +64,14 @@ const TodoView = () => {
     <div >
       <Container className="row justify-content-center">
       <div className="card col-md-6 m-5">
-      <div className="row justify-content-center mt-3">
+      <div >
   
-      <Row className={styles.Row}>
+      <Row className={`${styles.Row} justify-content-center`}>
         <h2>Todo Details</h2>
-        <table className="table">
+        <table className={`table ${styles.noBorder}`}>
           <tbody>
             <tr>
-              <th>Title</th>
+              <th className="th">Title</th>
               <td>{todo.title}</td>
             </tr>
             <tr>
@@ -89,13 +89,13 @@ const TodoView = () => {
       </div>
       </Container>
 
-      <Container className="row justify-content-center">
+      <Container className="justify-content-center">
       <div className="card col-md-6 m-5">
-      <div className="justify-content-center mt-3">
+      <div className="mt-3">
               
-      <Row className={styles.Row}>
+      <Row className={`${styles.Row} justify-content-center`}>
         <h2>Update Todo</h2>
-        <table className="table">
+        <table className={`table ${styles.noBorder}`}>
           <tbody>
             <tr>
               <th>Title</th>
@@ -152,7 +152,7 @@ const TodoView = () => {
        
 
       </Row>
-      <Row className={styles.Row}>
+      <Row className={`${styles.Row} justify-content-center`}>
         <button className="btn btn-secondary">
           <Link to="/todolist">Back to Todo List</Link>
         </button>
