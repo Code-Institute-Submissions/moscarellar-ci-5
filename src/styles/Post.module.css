@@ -35,8 +35,8 @@ h5 {
   color: #343A40; 
 }
 
-.lazy-load-img {
-  width: 100%;
+.lazy-load-img, card-img {
+  width: auto;
   height: auto;
-  display: block;
+  object-fit: cover;
 }
