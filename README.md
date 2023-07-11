@@ -1,13 +1,13 @@
-# MyFilmApp - Frontend React application - 3rd Submission Attempt
+# To Share + - Frontend React application - 3rd Submission Attempt
 
 [Live link](https://ci-p5.herokuapp.com/)
+[Back End Documentation and repository](https://github.com/moscarellar/drf-api)
 
 To Share + began as MyFilmApp. It was initially a Film Blog. After some improvements and other requirements: TO DO List have been implemented and is the focus of this App. 
 However,  you can also find a variation of the traditinal Post. Now we can render the Post in a different way, so you can create Memes as well.
 
 This project was developed within the Diploma in Software Development (Advanced Front End)
 
-Please find the link [here](https://ci-p5.herokuapp.com/).
 
 ![mock-up](src/assets/readme/mockup.png)
 
@@ -29,7 +29,6 @@ Please find the link [here](https://ci-p5.herokuapp.com/).
   - [Color Palette](#color-palette)
   - [Wireframes](#wireframes)
 - [Agile](#agile)
-- [Future Features Ideas / Improvements](#future-features-ideas--improvements)
 - [Technologies](#technologies)
   - [Languages](#languages)
   - [Programs, libraries, frameworks and dependencies](#programs-libraries-frameworks-and-dependencies)
@@ -118,31 +117,13 @@ The main colors used throughout the page are closely aligned to clean code, with
 
 ## Color Palette
 
-In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), #808080 for better contrast, and 0000FF (Blue) can be appropriate and beneficial for the following reasons:
-
-- Visual Appeal: The combination of light and dark shades in the palette creates a visually appealing and balanced design.
-- Readability: The high contrast between the light background and dark text color ensures good readability.
-- Attention and Focus: Vibrant colors can be used to draw attention to important elements.
-- Emotional Response: Colors can evoke positive emotions and add a playful touch.
-- Branding and Recognition: Consistent use of colors helps establish a strong visual identity.
-- Differentiation: The chosen color palette sets the app apart from others.
+In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), #808080 for better contrast, and 0000FF (Blue) can be appropriate and beneficial mainly for the visual appeal and emotional response from UI palette. 
 
 ### Color Usage
 
 The colors from the palette are used in the app as follows:
 
-| Color    | Usage                                                   |
-|----------|---------------------------------------------------------|
-| F8F9FA   | Used as the background color in the .Content class.      |
-| 343A40   | Used in various classes such as .Post, .Heart, etc.      |
-| FFC107   | Used in the .NavLink, .logo, a, and i classes.           |
-| 1A1A1A   | Used in the .App and .NavBar classes.                    |
-| 4D4D4D   | Used in the .Content and .NavBar classes.                |
-| FFA500   | Used in the .Heart and .HeartOutline:hover classes.      |
-| 0000FF   | Used in the *::-webkit-scrollbar-thumb:hover class.      |
-
-The color palette has been carefully chosen to provide visual appeal, readability, attention focus, and emotional response. It creates a distinctive and engaging experience for users, allowing them to share memes and manage their to-do lists with ease.
-
+The color palette has been carefully chosen to provide visual appeal and emotional response. On the Todo List, the background colors are white for a clearer contrast, as it's focus is on reading only, with no visual stimulus from posts. 
 
 ## Wireframes
 
@@ -183,11 +164,6 @@ For this project the GitHub Kanban agile project management tool was used to cre
 [Click here to check the board](https://github.com/users/moscarellar/projects/1)
 
 ![Github Kanban](src/assets/readme/tool.png)
-
-# Future Features Ideas / Improvements
-
-Due to time constrains, these additional feature ideas could not be included in this project, but can be added in the future: 
-- Categorize serch funcionality
 
 # Technologies
 
@@ -231,7 +207,6 @@ User authentication/authorisation & Navigation
 - Attempt to access protected pages as an authenticated user with valid credentials
 
 ### Expected results
-- Unauthenticated users should be redirected to the login page
 - Users with invalid credentials should be denied access
 - Users with valid credentials should be granted access
 
@@ -410,7 +385,7 @@ Improved software quality: Reusable components are tested, validated, and proven
 
 # Improvements and Bugs
 
-This project will turn into a Common Placebook after this evaluation is finish.
+This project will turn into a Common Placebook after this evaluation is finished.
 During the evolution of the project, the Todo List was implemented. After some time developing this feature, I came with the idea of a Common Placebook, which is a way to store knowledge. 
 
 This will requiere of Searching implementation into the todo list.

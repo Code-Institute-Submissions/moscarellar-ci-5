@@ -105,8 +105,8 @@ const Post = (props) => {
   alt={title}
   src={image} 
   effect="blur"
-  className="lazy-load-img"
-  className="card-img" />
+  className="lazy-load-img card-img"/>
+
       </Link>
 
       <Card.Body>
