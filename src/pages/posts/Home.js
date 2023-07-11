@@ -12,8 +12,8 @@ function Home() {
       <Row className={styles.Row}>
         <Card className={styles.Card}>
           <Card.Body>
-            <Card.Title>Share Your Favorite Memes</Card.Title>
-            <Card.Text>
+            <Card.Title className={styles.CardTitle}>Share Your Favorite Memes</Card.Title>
+            <Card.Text className={styles.CardText}>
               Upload and share the funniest memes you've found or created. Let's spread laughter together!
             </Card.Text>
           </Card.Body>
@@ -22,8 +22,8 @@ function Home() {
       <Row className={styles.Row}>
         <Card className={styles.Card}>
           <Card.Body>
-            <Card.Title>Discover and Laugh!</Card.Title>
-            <Card.Text>
+            <Card.Title className={styles.CardTitle}>Discover and Laugh!</Card.Title>
+            <Card.Text className={styles.CardText}>
               Explore memes from our community. Discover new memes, vote for your favorites, and have a good laugh!
             </Card.Text>
           </Card.Body>
@@ -32,8 +32,8 @@ function Home() {
       <Row className={styles.Row}>
         <Card className={styles.Card}>
           <Card.Body>
-            <Card.Title>Manage Your Todo List!</Card.Title>
-            <Card.Text>
+            <Card.Title className={styles.CardTitle}>Manage Your Todo List!</Card.Title>
+            <Card.Text className={styles.CardText}>
               Stay organized and productive with our integrated todo list. Keep track of your tasks and get things done!
             </Card.Text>
           </Card.Body>

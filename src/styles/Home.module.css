@@ -1,19 +1,25 @@
-/* Home.module.css */
-
 .Row {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #343A40;
-  }
-  
-  .Card {
-    margin: auto;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #F8F9FA; 
-    color: #343A40; 
-  }
-  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #343A40;
+}
+
+.Card {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #343A40;
+  color: #343A40;
+}
+
+.CardTitle {
+  color: #FFC107;
+}
+
+.CardText {
+  color: 
+  white;
+}

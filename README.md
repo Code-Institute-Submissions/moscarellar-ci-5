@@ -85,7 +85,7 @@ The main colors used throughout the page are closely aligned to clean code, with
 
 ## Color Palette
 
-In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), and 0000FF (Blue) can be appropriate and beneficial for the following reasons:
+In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), #808080 for better contrast, and 0000FF (Blue) can be appropriate and beneficial for the following reasons:
 
 - Visual Appeal: The combination of light and dark shades in the palette creates a visually appealing and balanced design.
 - Readability: The high contrast between the light background and dark text color ensures good readability.
