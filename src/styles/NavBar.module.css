@@ -25,6 +25,6 @@
 }
 
 .NavLink:hover, .NavLink.Active, .logo {
-  color: #FFC107; /* yellow */
+  color: #FFC107;
 }
 
