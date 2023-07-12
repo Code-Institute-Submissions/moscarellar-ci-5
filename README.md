@@ -1,10 +1,10 @@
 # To Share + - Frontend React application - 3rd Submission Attempt
 
-[Live link](https://ci-p5.herokuapp.com/)
-[Back End Documentation and repository](https://github.com/moscarellar/drf-api)
-
 To Share + began as MyFilmApp. It was initially a Film Blog. After some improvements and other requirements: TO DO List have been implemented and is the focus of this App. 
 However,  you can also find a variation of the traditinal Post. Now we can render the Post in a different way, so you can create Memes as well.
+
+- [Live link](https://ci-p5.herokuapp.com/)
+- [Back End Documentation and repository](https://github.com/moscarellar/drf-api)
 
 This project was developed within the Diploma in Software Development (Advanced Front End)
 
@@ -12,7 +12,6 @@ This project was developed within the Diploma in Software Development (Advanced 
 
 # Table of Contents
 
-- [MyFilmApp - Frontend React application Live link](https://ci-p5.herokuapp.com/)
 - [Project Goals](#project-goals)
 - [Updates](#updates)
 - [User Experience](#user-experience)
@@ -230,7 +229,26 @@ Todo List functionality
 
 ### Expected results
 - Users should be able to view their todo list
+
 - Users should be able to perform CRUD actions
+
+## Lighthouse
+
+The score for lighthouse 
+
+<details><summary><b>Local Score</b></summary>
+
+![Lighthouse](src/assets/readme/locallighthouse.png)
+</details><br/>
+
+<details><summary><b>Deployed - Incognito </b></summary>
+
+![Lighthouse](src/assets/readme/deployedlighthouse.png)
+</details><br/>
+
+Along the project, I had the opportunity to read a bit about performing better, optimizing the web app. I took a few decisions that helped me to get a better Performance score, like including LazyImages in the project.
+
+However, there is still some work to do and improvements to cover in order to have a better UX. Scores varies beteeen 54 to 85. 85% been the score in 
 
 # Deployment
 
