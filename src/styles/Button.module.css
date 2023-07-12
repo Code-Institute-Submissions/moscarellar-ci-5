@@ -7,7 +7,7 @@
   margin-left: 2px;
   margin-right: 2px;
   min-width: 75px;
-  background-color: #4d4d4d;
+  background-color: #fae602;
   color: #ffffff;
 }
 
@@ -15,19 +15,19 @@
   opacity: 0.8;
   border-color: transparent;
   cursor: pointer;
-  background-color: #666666;
+  background-color: #FFC107;
 }
 
 .Button:hover:active {
-  background-color: #808080;
+  background-color: #FFC107;
 }
 
 .Button:active {
-  background-color: #808080;
+  background-color: #FFC107;
 }
 
 .Button:focus {
-  background-color: #4d4d4d;
+  background-color: #FFC107;
 }
 
 .Wide {
@@ -61,6 +61,6 @@
 }
 
 .Bright {
-  background-color: #666666;
+  background-color: #FFC107;
   color: #4d4d4d;
 }

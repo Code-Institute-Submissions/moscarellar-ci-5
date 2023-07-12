@@ -73,9 +73,7 @@ function PostPage() {
   return (
     
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
-        
+      <Col className="py-2 p-0 p-lg-2" lg={8}>       
         <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && postPage && (
@@ -126,9 +124,6 @@ function PostPage() {
         </Container>
       </Col>
       
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
     </Row>
   );
 }

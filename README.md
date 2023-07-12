@@ -8,7 +8,6 @@ However,  you can also find a variation of the traditinal Post. Now we can rende
 
 This project was developed within the Diploma in Software Development (Advanced Front End)
 
-
 ![mock-up](src/assets/readme/mockup.png)
 
 # Table of Contents
@@ -117,11 +116,9 @@ The main colors used throughout the page are closely aligned to clean code, with
 
 ## Color Palette
 
-In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), #808080 for better contrast, and 0000FF (Blue) can be appropriate and beneficial mainly for the visual appeal and emotional response from UI palette. 
+In the context of a meme sharing and to-do list app, the chosen color palette of F8F9FA, 343A40, FFC107, 1A1A1A, 4D4D4D, FFA500 (Orange), #808080 with 84726e for better contrast, and 0000FF (Blue).
 
 ### Color Usage
-
-The colors from the palette are used in the app as follows:
 
 The color palette has been carefully chosen to provide visual appeal and emotional response. On the Todo List, the background colors are white for a clearer contrast, as it's focus is on reading only, with no visual stimulus from posts. 
 
@@ -196,30 +193,12 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 ## User authentication/authorisation & Navigation
 User authentication/authorisation & Navigation
 
-### Test cases
-- Verify that only authenticated users can access protected pages
-- Verify that unauthenticated users are redirected to the login page
-- Verify that user credentials are correctly validated
-
-### Testing actions
-- Attempt to access protected pages as an unauthenticated user
-- Attempt to access protected pages as an authenticated user with invalid credentials
-- Attempt to access protected pages as an authenticated user with valid credentials
-
 ### Expected results
 - Users with invalid credentials should be denied access
 - Users with valid credentials should be granted access
 
 ## Main Feed functionality
 Main Feed functionality
-
-### Test cases
-- Verify that posts are displayed in reverse chronological order
-- Verify that posts are displayed with the correct author and timestamp
-
-### Testing actions
-- Create multiple posts with different authors and timestamps
-- Verify that posts are displayed in the correct order
 
 ### Expected results
 - Posts should be displayed in reverse chronological order
@@ -228,28 +207,12 @@ Main Feed functionality
 ## Adding a post
 Adding a post
 
-### Test cases
-- Verify that only authenticated users can add posts
-- Verify that new posts are displayed on the main feed
-
-### Testing actions
-- Attempt to add a post as an unauthenticated user
-- Attempt to add a post as an authenticated user
-
 ### Expected results
 - Unauthenticated users should be denied access to the "Add Post" page
 - Authenticated users should be able to add posts, which should then be displayed on the main feed
 
 ## Post page functionality
 Post page functionality
-
-### Test cases
-- Verify that users can view individual posts
-- Verify that users can like and comment on posts
-
-### Testing actions
-- Click on a post from the main feed to view the post page
-- Attempt to like and comment on the post
 
 ### Expected results
 - Users should be able to view individual posts
@@ -258,33 +221,12 @@ Post page functionality
 ## Profile page functionality
 Profile page functionality
 
-### Test cases
-- Verify that users can view their own profile page
-- Verify that users can view other users' profile pages
-
-### Testing actions
-- Navigate to the user's own profile page
-- Navigate to another user's profile page
-
 ### Expected results
 - Users should be able to view their own profile page
 - Users should be able to view other users' profile pages
 
 ## Todo List funcionality
 Todo List functionality
-
-### Test cases
-- Verify that users can check their todo list
-- Verify that users can add, create a todo
-- Verify that users can delete a todo
-- Verify that users can update a todo
-- Verify that users can filter todos as per state of completed
-
-### Testing actions
-- Navigate to the user's todo list
-- Click over a todo, or edit button
-- Perform delete of a todo
-- Filter todos as completed, all or completed
 
 ### Expected results
 - Users should be able to view their todo list

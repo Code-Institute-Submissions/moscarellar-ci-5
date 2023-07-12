@@ -32,13 +32,14 @@
 }
 
 a {
-  color: #FFC107; /* Use the yellow color for links */
+  color: white;
   transition: color ease-in-out 0.3s;
+  font-weight: bold;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #FFA500; /* Orange color on hover */
+  color: #FFA500; 
 }
 
 input[type="file"] {
@@ -46,7 +47,7 @@ input[type="file"] {
 }
 
 i {
-  color: #FFC107; /* Yellow color for icons */
+  color: #FFC107; 
   font-size: 1.6rem;
   padding: 7px;
   vertical-align: middle;
@@ -79,13 +80,13 @@ figure {
 /* For screens smaller than 600px */
 @media (max-width: 600px) {
   .Main {
-    padding-top: 120px; /* Increase padding for smaller screens */
+    padding-top: 120px; 
   }
 }
 
 /* For screens smaller than 400px */
 @media (max-width: 400px) {
   .Main {
-    padding-top: 140px; /* Further increase padding for very small screens */
+    padding-top: 140px; 
   }
 }

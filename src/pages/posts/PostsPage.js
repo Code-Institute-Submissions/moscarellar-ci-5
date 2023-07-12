@@ -96,9 +96,9 @@ function PostsPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      {/* <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
-      </Col>
+      </Col> */}
     </Row>
   );
 }
