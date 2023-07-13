@@ -24,7 +24,7 @@ function Home() {
           <Card.Body>
             <Card.Title className={styles.CardTitle}>Discover and Laugh!</Card.Title>
             <Card.Text className={styles.CardText}>
-              Explore memes from our community. Discover new memes, vote for your favorites, and have a good laugh!
+              Explore memes from our community. Discover new memes and have a good laugh!
             </Card.Text>
           </Card.Body>
         </Card>
